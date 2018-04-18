@@ -32,6 +32,7 @@ def create_vocab(text):
     for comp in law:
         tmp = []
         if(comp != " " and comp != "\n"):
+        	vocab_count += 1
             tag = re.findall(r"\(+\w+\)",comp)
             tag1 = re.findall(r"\(+\(+\w+\)",comp)
             if(tag1 != []):
@@ -56,7 +57,6 @@ def create_vocab(text):
             tmp.append("False")
             tmp.append(tag)
             vocab.append(tmp)
-            vocab_count += 1
         else:
             if(vocab != []):
                 i = vocab_count-1
