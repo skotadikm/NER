@@ -28,9 +28,9 @@ def create_vocab(text):
     global front_space
     global vocab_count
     global vocab
-    law = re.split(r'\|*', text)
+    raw = re.split(r'\|*', text)
     init = 0
-    for comp in law:
+    for comp in raw:
         if(init == 0):
             init = 1
         else:
@@ -44,6 +44,9 @@ def create_vocab(text):
                     word = "("
                     temp = tag[0]
                     tag[0] = temp[1:]
+                elif(tag[0] == comp):
+                    word = tag[0]
+                    tag = []
                 elif(tag == []):
                     tag.append("(other)")
                     word = comp
