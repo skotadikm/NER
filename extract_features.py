@@ -31,10 +31,10 @@ def create_vocab(text):
     law = re.split(r'\|*', text)
     init = 0
     for comp in law:
-    	if(init == 0):
-    		init = 1
+        if(init == 0):
+            init = 1
         else:
-        	tmp = []
+            tmp = []
             space_tag = re.findall(r"\s",comp)
             if(comp != " " and comp != "\n" and space_tag == []):
                 vocab_count += 1
