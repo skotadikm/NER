@@ -65,12 +65,12 @@ def create_vocab(text):
                 vocab.append(tmp)
                 tune = 0
                 for i in range(vocab_count):	
-                	if(vocab[i][0] == word):
-               		vocab[i][1] += 1
-                		if(vocab[i][1] > tune):
-                			tune = vocab[i][1]
-                		else:
-                			vocab[i][1] = tune
+                    if(vocab[i][0] == word):
+               	    vocab[i][1] += 1
+                        if(vocab[i][1] > tune):
+                            tune = vocab[i][1]
+                        else:
+                            vocab[i][1] = tune
             else:
                 if(vocab != []):
                     i = vocab_count-1
