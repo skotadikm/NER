@@ -31,7 +31,7 @@ def create_vocab(text):
     law = re.split(r'\|*', text)
     for comp in law:
         tmp = []
-        space_tag = re.findall(r"\s+\w",comp)
+        space_tag = re.findall(r"\s",comp)
         if(comp != " " and comp != "\n" and space_tag == []):
             vocab_count += 1
             tag = re.findall(r"\(+\w+\)",comp)
