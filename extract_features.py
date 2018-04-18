@@ -1,5 +1,5 @@
 #vocab is list of word features
-#word feature = [w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),class]
+#word feature = [original word,word counter,w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),class]
 #if it has dicts,dict will be appended in the end of feature list.
 
 #define
@@ -40,12 +40,15 @@ def create_vocab(text):
                 temp = tag[0]
                 tag[0] = temp[1:]
             elif(tag == []):
-                tag.append("o")
+                tag.append("other")
                 word = comp
             else:
                 word =  comp.replace(tag[0], "")
             label = tag[0]
-            tmp = [word,"ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
+            tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
+            for i in range(0,vocab_count):
+            	if(vocab[i][0] == word):
+            		vocab[i][1] += 1
             tmp.append(alphanum(word))
             tmp.append(Num(word))
             tmp.append(special_char(word))
@@ -61,7 +64,7 @@ def create_vocab(text):
         else:
             if(vocab != []):
                 i = vocab_count-1
-                vocab[i][16] = "True"
+                vocab[i][18] = "True"
                 front_space = 1
     for i in range(vocab_count):
         f = 1
