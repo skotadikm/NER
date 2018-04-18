@@ -29,49 +29,53 @@ def create_vocab(text):
     global vocab_count
     global vocab
     law = re.split(r'\|*', text)
+    init = 0
     for comp in law:
-        tmp = []
-        space_tag = re.findall(r"\s",comp)
-        if(comp != " " and comp != "\n" and space_tag == []):
-            vocab_count += 1
-            tag = re.findall(r"\(+\w+\)",comp)
-            tag1 = re.findall(r"\(+\(+\w+\)",comp)
-            if(tag1 != []):
-                word = "("
-                temp = tag[0]
-                tag[0] = temp[1:]
-            elif(tag == []):
-                tag.append("other")
-                word = comp
-            else:
-                word =  comp.replace(tag[0], "")
-            label = tag[0]
-            tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
-            tmp.append(alphanum(word))
-            tmp.append(Num(word))
-            tmp.append(special_char(word))
-            tmp.append(English(word))
-            if(front_space != 0):
-                tmp.append("True")
-                front_space = 0
-            else:
-                tmp.append("False")
-            tmp.append("False")
-            tmp.append(label)
-            vocab.append(tmp)
-            tune = 0
-            for i in range(vocab_count):	
-            	if(vocab[i][0] == word):
-            		vocab[i][1] += 1
-            		if(vocab[i][1] > tune):
-            			tune = vocab[i][1]
-            		else:
-            			vocab[i][1] = tune
+    	if(init == 0):
+    		init = 1
         else:
-            if(vocab != []):
-                i = vocab_count-1
-                vocab[i][18] = "True"
-                front_space = 1
+        	tmp = []
+            space_tag = re.findall(r"\s",comp)
+            if(comp != " " and comp != "\n" and space_tag == []):
+                vocab_count += 1
+                tag = re.findall(r"\(+\w+\)",comp)
+                tag1 = re.findall(r"\(+\(+\w+\)",comp)
+                if(tag1 != []):
+                    word = "("
+                    temp = tag[0]
+                    tag[0] = temp[1:]
+                elif(tag == []):
+                    tag.append("(other)")
+                    word = comp
+                else:
+                    word =  comp.replace(tag[0], "")
+                label = tag[0]
+                tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
+                tmp.append(alphanum(word))
+                tmp.append(Num(word))
+                tmp.append(special_char(word))
+                tmp.append(English(word))
+                if(front_space != 0):
+                    tmp.append("True")
+                    front_space = 0
+                else:
+                    tmp.append("False")
+                tmp.append("False")
+                tmp.append(label)
+                vocab.append(tmp)
+                tune = 0
+                for i in range(vocab_count):	
+                	if(vocab[i][0] == word):
+               		vocab[i][1] += 1
+                		if(vocab[i][1] > tune):
+                			tune = vocab[i][1]
+                		else:
+                			vocab[i][1] = tune
+            else:
+                if(vocab != []):
+                    i = vocab_count-1
+                    vocab[i][18] = "True"
+                    front_space = 1
 
 def vocab_check():
     global vocab
