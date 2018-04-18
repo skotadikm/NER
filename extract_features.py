@@ -152,6 +152,6 @@ if __name__ == '__main__':
     f = open("output.txt","w+")
     for List in vocab:
         for word in List:
-            f.write("|"+word)
+            f.write("|"+str(word))
         f.write("|"+"\n")
     f.close() 
