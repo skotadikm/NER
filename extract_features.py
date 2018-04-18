@@ -44,6 +44,7 @@ def create_vocab(text):
                 word = comp
             else:
                 word =  comp.replace(tag[0], "")
+            label = tag[0]
             tmp = [word,"ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
             tmp.append(alphanum(word))
             tmp.append(Num(word))
@@ -55,7 +56,7 @@ def create_vocab(text):
             else:
                 tmp.append("False")
             tmp.append("False")
-            tmp.append(tag)
+            tmp.append(label)
             vocab.append(tmp)
         else:
             if(vocab != []):
