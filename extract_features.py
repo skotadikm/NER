@@ -67,8 +67,8 @@ def create_vocab(text):
                 vocab[i][18] = "True"
                 front_space = 1
     for i in range(vocab_count):
-        f = 1
-        e = 6
+        f = 2
+        e = 7
         for j in range(1,6):
             if(i-j >= 0):
                 vocab[i][f] = vocab[i-j][0]
