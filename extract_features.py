@@ -8,6 +8,8 @@
 #special_char = atleast it has to contain special char
 #English = contained with only english alphabet
 
+# sum of corpus for filename
+
 #####################################################################################
 import re
 import sys
@@ -117,7 +119,6 @@ def alphanum(word):
         print(count)
         return False
 
-
 def Num(word):
     return word.isdigit()
     #return any(char.isdigit() for char in word)
@@ -143,8 +144,14 @@ if __name__ == '__main__':
     vocab_check()
     print(text)
     for i in vocab:
-    	print(i)
+        print(i)
     print("Total is " + str(len(vocab)) + " word")
-    #f = open("train.txt","w+")
-    #f.write(vocab)
-    #f.close() 
+
+
+# god tum ja
+    f = open("output.txt","w+")
+    for List in vocab:
+        for word in List:
+            f.write("|"+word)
+        f.write("|"+"\n")
+    f.close() 
