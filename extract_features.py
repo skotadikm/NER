@@ -50,7 +50,7 @@ def create_vocab(text):
                 else:
                     if(tag[0] == comp):
                         word = tag[0]
-                        tag = []
+                        tag[0] = "(other)" 
                     else:
                         word =  comp.replace(tag[0], "")
                 label = tag[0]
