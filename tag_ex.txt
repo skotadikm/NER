@@ -1,0 +1,21 @@
+w0 ! ool ! ool ! ool ! ool ! ool ! w1 ! w2 ! w3 ! w4 ! w5 ! is_in_D1(w0) ! ... ! is_in_D1(w5) ! ... ! is_in_Dk(w5) ! alphanum(w0) ! Num(w0) ! special_char(w0) ! English(w0) ! blank_front(w0) ! blank_end(w0) ! class_output(w0)
+w1 ! w0 ! ool ! ool ! ool ! ool ! w2 ! w3 ! w4 ! w5 ! w6 ! ...
+w2
+w3
+w4
+w5
+.
+.
+.
+wn
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+is_in_D.. = D , D_start , D_in , out
+alphanum = true , false
+Num = true , false
+special_char = true , false
+English = true , false
+blank_front = true , false
+blank_end = true , false
+class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
