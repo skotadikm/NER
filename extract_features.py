@@ -68,13 +68,13 @@ def create_vocab(text):
                 front_space = 1
 
 def vocab_check():
-	global vocab
-	global vocab_count
-	for i in range(vocab_count):
-		if(vocab[i][1] >=3 ):
-			vocab[i][2] = vocab[i][0]
-		else:
-			vocab[i][2] = "unknow"
+    global vocab
+    global vocab_count
+    for i in range(vocab_count):
+        if(vocab[i][1] >=3 ):
+            vocab[i][2] = vocab[i][0]
+        else:
+            vocab[i][2] = "unknow"
     for i in range(vocab_count):
         f = 3
         e = 8
