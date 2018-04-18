@@ -46,7 +46,7 @@ def create_vocab(text):
                 word =  comp.replace(tag[0], "")
             label = tag[0]
             tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
-            for i in range(0,vocab_count):
+            for i in range(0,vocab_count-1):
             	if(vocab[i][0] == word):
             		vocab[i][1] += 1
             tmp.append(alphanum(word))
