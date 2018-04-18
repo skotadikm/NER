@@ -31,7 +31,7 @@ def create_vocab(text):
     law = re.split(r'\|*', text)
     for comp in law:
         tmp = []
-        space_tag = re.findall(r"\ +\w",comp)
+        space_tag = re.findall(r"\s+\w",comp)
         if(comp != " " and comp != "\n" and space_tag == []):
             vocab_count += 1
             tag = re.findall(r"\(+\w+\)",comp)
@@ -75,7 +75,7 @@ def vocab_check():
         if(vocab[i][1] >=3 ):
             vocab[i][2] = vocab[i][0]
         else:
-            vocab[i][2] = "unknow"
+            vocab[i][2] = "unknown"
     for i in range(vocab_count):
         f = 3
         e = 8
