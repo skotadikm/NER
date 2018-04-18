@@ -126,6 +126,7 @@ def English(word):
 if __name__ == '__main__':
     read_txt()
     create_vocab(text)
+    vocab_check()
     print(text)
     print(vocab)
     print("Total is " + str(len(vocab)) + " word")
