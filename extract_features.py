@@ -33,7 +33,6 @@ def create_vocab(text):
         tmp = []
         space_tag = re.findall(r"\s",comp)
         if(comp != " " and comp != "\n" and space_tag == []):
-            vocab_count += 1
             tag = re.findall(r"\(+\w+\)",comp)
             tag1 = re.findall(r"\(+\(+\w+\)",comp)
             if(tag1 != []):
@@ -48,7 +47,7 @@ def create_vocab(text):
             label = tag[0]
             tmp = [word,1,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
             tune = 0
-            for i in range(0,vocab_count-1):	
+            for i in range(0,vocab_count):	
             	if(vocab[i][0] == word):
             		vocab[i][1] += 1
             		if(vocab[i][1] > tune):
@@ -67,6 +66,7 @@ def create_vocab(text):
             tmp.append("False")
             tmp.append(label)
             vocab.append(tmp)
+            vocab_count += 1
         else:
             if(vocab != []):
                 i = vocab_count-1
