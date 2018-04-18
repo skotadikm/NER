@@ -44,14 +44,15 @@ def create_vocab(text):
                     word = "("
                     temp = tag[0]
                     tag[0] = temp[1:]
-                elif(tag[0] == comp):
-                    word = tag[0]
-                    tag = []
                 elif(tag == []):
                     tag.append("(other)")
                     word = comp
                 else:
-                    word =  comp.replace(tag[0], "")
+                    if(tag[0] == comp):
+                        word = tag[0]
+                        tag = []
+                    else:
+                        word =  comp.replace(tag[0], "")
                 label = tag[0]
                 tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
                 tmp.append(alphanum(word))
