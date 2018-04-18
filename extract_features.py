@@ -134,7 +134,8 @@ if __name__ == '__main__':
     create_vocab(text)
     vocab_check()
     print(text)
-    print(vocab)
+    for i in vocab:
+    	print(i)
     print("Total is " + str(len(vocab)) + " word")
     #f = open("train.txt","w+")
     #f.write(vocab)
