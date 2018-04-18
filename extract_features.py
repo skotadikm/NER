@@ -61,11 +61,12 @@ def create_vocab(text):
                 tmp.append("False")
             tmp.append("False")
             tmp.append(label)
+            tmp.append(space_tag)
             vocab.append(tmp)
         else:
             if(vocab != []):
                 i = vocab_count-1
-                vocab[i][18] = "True"
+                vocab[i][19] = "True"
                 front_space = 1
 
 def vocab_check():
