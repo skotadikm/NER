@@ -46,15 +46,7 @@ def create_vocab(text):
             else:
                 word =  comp.replace(tag[0], "")
             label = tag[0]
-            tmp = [word,1,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
-            tune = 0
-            for i in range(vocab_count):	
-            	if(vocab[i][0] == word):
-            		vocab[i][1] += 1
-            		if(vocab[i][1] > tune):
-            			tune = vocab[i][1]
-            		else:
-            			vocab[i][1] = tune
+            tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
             tmp.append(alphanum(word))
             tmp.append(Num(word))
             tmp.append(special_char(word))
@@ -67,6 +59,14 @@ def create_vocab(text):
             tmp.append("False")
             tmp.append(label)
             vocab.append(tmp)
+            tune = 0
+            for i in range(vocab_count):	
+            	if(vocab[i][0] == word):
+            		vocab[i][1] += 1
+            		if(vocab[i][1] > tune):
+            			tune = vocab[i][1]
+            		else:
+            			vocab[i][1] = tune
         else:
             if(vocab != []):
                 i = vocab_count-1
