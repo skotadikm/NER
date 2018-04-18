@@ -1,0 +1,38 @@
+original ! vocab_count ! w0 ! ool ! ool ! ool ! ool ! ool ! w1 ! w2 ! w3 ! w4 ! w5 ! is_in_D1(w0) ! ... ! is_in_D1(w5) ! ... ! is_in_Dk(w5) ! alphanum(w0) ! Num(w0) ! special_char(w0) ! English(w0) ! blank_front(w0) ! blank_end(w0) ! class_output(w0)
+original ! vocab_count ! w1 ! w0 ! ool ! ool ! ool ! ool ! w2 ! w3 ! w4 ! w5 ! w6 ! ...
+original ! vocab_count ! w2
+original ! vocab_count ! w3
+original ! vocab_count ! w4
+original ! vocab_count ! w5
+.
+.
+.
+original ! vocab_count ! wn
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+position|	feature
+________|_______________________________________________________________________________________________________________________________________
+0     	|	original = real word
+1     	|	vocab_count = amount of vocabs
+2  	|	w0 = vocab 
+3  	|	w-1 = vocab 
+4  	|	w-2 = vocab 
+5  	|	w-3 = vocab 
+6  	|	w-4 = vocab 
+7  	|	w-5 = vocab 
+8  	|	w+1 = vocab 
+9  	|	w+2 = vocab 
+10  	|	w+3 = vocab 
+11  	|	w+4 = vocab 
+12  	|	w+5 = vocab 
+13    	|	is_in_D.. = D , D_start , D_in , out
+14    	|	alphanum = true , false
+15    	|	Num = true , false
+16    	|	special_char = true , false
+17    	|	English = true , false
+18    	|	blank_front = true , false
+19    	|	blank_end = true , false
+20    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
+21 to n	|	dict
+________|_______________________________________________________________________________________________________________________________________
