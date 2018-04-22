@@ -21,6 +21,7 @@ front_space = 0
 vocab_count = 0
 
 #original dictionary
+dic_list = ["common","loc_name","loc_clue","org_name","org_clue","per_clue","per_first","per_last"]
 common = []
 loc_name = []
 loc_clue = []
@@ -32,7 +33,7 @@ per_last = []
 
 def create_dic(dic):
     #แก้ไขpath dic
-    filenames = "loc_clue"
+    filenames = dic_list[2]
     txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
