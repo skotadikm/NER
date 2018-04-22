@@ -15,7 +15,7 @@ import re
 import sys
 import os
 
-cur_path = os.path.dirname(__file__)
+cur_path = ""
 filename = sys.argv[1]
 vocab = []
 corpus_text = ""
@@ -158,6 +158,7 @@ def English(word):
     return word.isalpha()
 
 if __name__ == '__main__':
+    cur_path = os.path.dirname(__file__)
     read_txt(filename)
     create_dic(loc_clue)
     create_vocab(corpus_text)
