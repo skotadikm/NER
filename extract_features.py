@@ -36,6 +36,10 @@ def create_dic(dic):
     text = txt_file.read()
     txt_file.close()
     print (text)
+    raw = re.split(r'*\n', corpus_text)
+    for comp in raw:
+        dic.append(comp)
+    print(dic)    
 
 def read_txt(filenames):
     global corpus_text
