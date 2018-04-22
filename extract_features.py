@@ -16,24 +16,34 @@ import sys
 
 filename = sys.argv[1]
 vocab = []
-text = ""
+corpus_text = ""
 front_space = 0
 vocab_count = 0
+
+#original dictionary
+common = []
+loc_name = []
+loc_clue = []
+org_name = []
+org_clue = []
+per_clue = []
+per_first = []
+per_last = []
 
 #def create_dic():
 
 
 def read_txt(filenames):
-    global text
+    global corpus_text
     txt_file = open(filenames,"r",encoding="utf8")
-    text = txt_file.read()
+    corpus_text = txt_file.read()
     txt_file.close()
 
-def create_vocab(text):
+def create_vocab(corpus_text):
     global front_space
     global vocab_count
     global vocab
-    raw = re.split(r'\|*', text)
+    raw = re.split(r'\|*', corpus_text)
     init = 0
     for comp in raw:
         if(init == 0):
@@ -143,9 +153,9 @@ def English(word):
 
 if __name__ == '__main__':
     read_txt(filename)
-    create_vocab(text)
+    create_vocab(corpus_text)
     vocab_check()
-    print(text)
+    print(corpus_text)
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
