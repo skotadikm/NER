@@ -31,9 +31,9 @@ per_clue = []
 per_first = []
 per_last = []
 
-def create_dic(dic):
+def create_dic(i):
     #แก้ไขpath dic
-    filenames = dic_list[2]
+    filenames = dic_list[i]
     txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
@@ -155,7 +155,6 @@ def alphanum(word):
 
 def Num(word):
     return word.isdigit()
-    #return any(char.isdigit() for char in word)
 
 def special_char(word):
     special_chars = "!#$%&'*+-.^_`|~:"
@@ -174,7 +173,8 @@ def English(word):
 
 if __name__ == '__main__':
     read_txt(filename)
-    create_dic(loc_clue)
+    for i in range(len(dic_list)):
+        create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
     print(corpus_text)
