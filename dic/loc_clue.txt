@@ -1,0 +1,24 @@
+﻿ราชอาณาจักร
+Kingdom
+ราชรัฐ
+Principality
+Grand Duchy
+รัฐสุลต่าน
+Siltanate
+สาธารณรัฐ
+Republic
+สหพันธ์สาธารณรัฐ
+Federal Republic
+Federative Republic
+สมาพันธรัฐ
+Confederation
+สหรัฐ
+United States
+สหภาพ
+Union
+สหราชอาณาจักร
+United Kingdom
+สหสาธารณรัฐ
+United Republic
+เครือรัฐ
+Commonwealth
