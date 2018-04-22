@@ -20,9 +20,12 @@ text = ""
 front_space = 0
 vocab_count = 0
 
-def read_txt():
+def create_dic():
+
+
+def read_txt(filenames):
     global text
-    txt_file = open(filename,"r",encoding="utf8")
+    txt_file = open(filenames,"r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
 
@@ -139,7 +142,7 @@ def English(word):
     return word.isalpha()
 
 if __name__ == '__main__':
-    read_txt()
+    read_txt(filenames)
     create_vocab(text)
     vocab_check()
     print(text)
