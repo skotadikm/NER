@@ -30,8 +30,11 @@ per_clue = []
 per_first = []
 per_last = []
 
-#def create_dic():
-
+def create_dic(filenames):
+	txt_file = open("/dic/"+filenames+".txt","r",encoding="utf8")
+    text = txt_file.read()
+    txt_file.close()
+    print text
 
 def read_txt(filenames):
     global corpus_text
@@ -153,6 +156,7 @@ def English(word):
 
 if __name__ == '__main__':
     read_txt(filename)
+    create_dic(loc_clue)
     create_vocab(corpus_text)
     vocab_check()
     print(corpus_text)
