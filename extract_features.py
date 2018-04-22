@@ -142,7 +142,7 @@ def English(word):
     return word.isalpha()
 
 if __name__ == '__main__':
-    read_txt(filenames)
+    read_txt(filename)
     create_vocab(text)
     vocab_check()
     print(text)
