@@ -40,6 +40,8 @@ def create_dic(dic):
     raw = re.split(r'\n', text)
     for comp in raw:
         dic.append(comp)
+    oldstr = dic[0]
+    dic[0] = oldstr.replace("\ufeff", "")
     print(dic)    
 
 def read_txt(filenames):
@@ -165,7 +167,6 @@ if __name__ == '__main__':
     create_dic(loc_clue)
     create_vocab(corpus_text)
     vocab_check()
-    print(loc_clue)
     print(corpus_text)
     for i in vocab:
         print(i)
