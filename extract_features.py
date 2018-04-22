@@ -13,9 +13,7 @@
 #####################################################################################
 import re
 import sys
-import os
 
-cur_path = ""
 filename = sys.argv[1]
 vocab = []
 corpus_text = ""
@@ -32,9 +30,9 @@ per_clue = []
 per_first = []
 per_last = []
 
-def create_dic(dics):
-    filenames = os.path.relpath('dic\\local_clue.txt', cur_path)
-    txt_file = open(filenames,"r",encoding="utf8")
+def create_dic(dic):
+    filenames = "loc_clue"
+    txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
     print (text)
@@ -158,7 +156,6 @@ def English(word):
     return word.isalpha()
 
 if __name__ == '__main__':
-    cur_path = os.path.dirname(__file__)
     read_txt(filename)
     create_dic(loc_clue)
     create_vocab(corpus_text)
