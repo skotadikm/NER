@@ -31,7 +31,7 @@ per_first = []
 per_last = []
 
 def create_dic(filenames):
-	txt_file = open(filenames+".txt","r",encoding="utf8")
+    txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
     print text
