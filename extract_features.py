@@ -36,7 +36,7 @@ def create_dic(dic):
     text = txt_file.read()
     txt_file.close()
     print (text)
-    raw = re.split(r'*\n', text)
+    raw = re.split(r'\n', text)
     for comp in raw:
         dic.append(comp)
     print(dic)    
