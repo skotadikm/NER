@@ -30,9 +30,9 @@ per_clue = []
 per_first = []
 per_last = []
 
-def create_dic(dic):
+def create_dic(dics):
     filenames = "loc_clue"
-    txt_file = open("/dic/"+filenames+".txt","r",encoding="utf8")
+    txt_file = open(dic+"/"+filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
     print (text)
