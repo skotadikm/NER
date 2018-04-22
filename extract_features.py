@@ -31,6 +31,7 @@ per_first = []
 per_last = []
 
 def create_dic(dic):
+    #แก้ไขpath dic
     filenames = "loc_clue"
     txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
@@ -164,6 +165,7 @@ if __name__ == '__main__':
     create_dic(loc_clue)
     create_vocab(corpus_text)
     vocab_check()
+    print(loc_clue)
     print(corpus_text)
     for i in vocab:
         print(i)
