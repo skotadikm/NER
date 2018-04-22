@@ -34,7 +34,7 @@ def create_dic(filenames):
     txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
-    print text
+    print (text)
 
 def read_txt(filenames):
     global corpus_text
