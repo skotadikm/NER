@@ -39,9 +39,27 @@ def create_dic(dic):
     print (text)
     raw = re.split(r'\n', text)
     for comp in raw:
-        dic.append(comp)
-    oldstr = dic[0]
-    dic[0] = oldstr.replace("\ufeff", "")
+        count = 0
+        front = 0
+        tmp = []
+        if(comp != " "):
+            count += 1
+            tmp.append(comp)
+            if(front_space != 0):
+                    tmp.append("True")
+                    front = 0
+                else:
+                    tmp.append("False")
+            tmp.append("False")
+            dic.append(tmp)
+        else:
+            if(dic != []):
+                i = count-1
+                dic[i][2] = "True"
+                front = 1
+
+    oldstr = dic[0][0]
+    dic[0][0] = oldstr.replace("\ufeff", "")
     print(dic)    
 
 def read_txt(filenames):
