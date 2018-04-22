@@ -20,7 +20,7 @@ text = ""
 front_space = 0
 vocab_count = 0
 
-def create_dic():
+#def create_dic():
 
 
 def read_txt(filenames):
