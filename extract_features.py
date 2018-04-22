@@ -95,9 +95,11 @@ def create_vocab(corpus_text):
 
 
                 #add dic feature n dic
-                feature_extend = 2
-                for i in range(feature_extend):
-                    tmp.append("False")
+                #feature_extend = 2
+                #for i in range(feature_extend):
+                #    tmp.append("False")
+                ######################
+
                 tmp.append(label)
                 vocab.append(tmp)
                 tune = 0
