@@ -45,11 +45,11 @@ def create_dic(dic):
         if(comp != " "):
             count += 1
             tmp.append(comp)
-            if(front_space != 0):
-                    tmp.append("True")
-                    front = 0
-                else:
-                    tmp.append("False")
+            if(front != 0):
+                tmp.append("True")
+                front = 0
+            else:
+                tmp.append("False")
             tmp.append("False")
             dic.append(tmp)
         else:
