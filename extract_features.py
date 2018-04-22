@@ -32,7 +32,7 @@ per_last = []
 
 def create_dic(dic):
     filenames = "loc_clue"
-    txt_file = open(filenames+".txt","r",encoding="utf8")
+    txt_file = open("/dic/"+filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
     print (text)
