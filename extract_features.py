@@ -15,8 +15,7 @@ import re
 import sys
 import os
 
-os.getcwd()
-os.path.exists(direct)
+cur_path = os.path.dirname(__file__)
 filename = sys.argv[1]
 vocab = []
 corpus_text = ""
@@ -34,8 +33,8 @@ per_first = []
 per_last = []
 
 def create_dic(dics):
-    filenames = "loc_clue"
-    txt_file = open(direct+"/"+filenames+".txt","r",encoding="utf8")
+    filenames = os.path.relpath('dic\\local_clue.txt', cur_path)
+    txt_file = open(filenames,"r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
     print (text)
