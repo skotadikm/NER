@@ -40,8 +40,7 @@ def create_dic(i):
     print (text)
     raw = re.split(r'\n', text)
     for comp in raw:
-        dic.append(comp)
-
+        eval("%s.append(comp)" %dic_list[i])
     oldstr = dic[0]
     dic[0] = oldstr.replace("\ufeff", "")
     print(dic)    
