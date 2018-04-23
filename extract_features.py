@@ -54,7 +54,7 @@ def create_vocab(corpus_text):
     global front_space
     global vocab_count
     global vocab
-    raw = re.split(r'\|*', corpus_text)
+    raw = re.split(r'\|', corpus_text)
     init = 0
     for comp in raw:
         if(init == 0):
