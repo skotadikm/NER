@@ -42,7 +42,7 @@ def create_dic(i):
     for comp in raw:
         eval("%s.append(comp)" %dic_list[i])
     oldstr = ""
-    eval("oldstr = %s[0]" %dic_list[i])
+    eval("%s = %s[0]." %oldstr ,%dic_list[i])
     tmp = oldstr.replace("\ufeff", "")
     eval("%s[0] = tmp" %dic_list[i])
    
