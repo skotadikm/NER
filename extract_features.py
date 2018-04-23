@@ -41,9 +41,11 @@ def create_dic(i):
     raw = re.split(r'\n', text)
     for comp in raw:
         eval("%s.append(comp)" %dic_list[i])
-    #oldstr = dic_list[0]
-    #dic_list[0] = oldstr.replace("\ufeff", "")
-    print(common)    
+    oldstr = ""
+    eval("oldstr = %s" %dic_list[0])
+    tmp = oldstr.replace("\ufeff", "")
+    eval("%s = tmp" %dic_list[0])
+   
 
 def read_txt(filenames):
     global corpus_text
@@ -174,6 +176,7 @@ if __name__ == '__main__':
     read_txt(filename)
     for i in range(len(dic_list)):
         create_dic(i)
+    print(loc_clue)
     create_vocab(corpus_text)
     vocab_check()
     print(corpus_text)
