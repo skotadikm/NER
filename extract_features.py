@@ -39,6 +39,11 @@ def create_dic(i):
     txt_file.close()
     raw = re.split(r'\n', text)
     eval("%s.append(raw[0])" %dic_list[i])
+    tmp = ""
+    eval("tmp = %s.pop" %dic_list[i])
+    print(tmp)
+    tmp2 = tmp.replace("\ufeff", "")
+    print(tmp2)
     for comp in range(1,len(raw)):
         eval("%s.append(comp)" %dic_list[i])
     #eval("%s[0].replace('\ufeff', '')" %dic_list[i])
