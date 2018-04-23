@@ -40,14 +40,10 @@ def create_dic(i):
     raw = re.split(r'\n', text)
     for comp in raw:
         eval("%s.append(comp)" %dic_list[i])
-    tmp = eval("%s" %dic_list[i])[0]
-    print(tmp)
-    #eval("%s[0].replace('\ufeff', '')" %dic_list[i])
-   
 
 def read_txt(filenames):
     global corpus_text
-    txt_file = open(filenames,"r",encoding="utf8")
+    txt_file = open(filenames,"r",encoding="utf-8-sig")
     corpus_text = txt_file.read()
     txt_file.close()
 
