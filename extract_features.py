@@ -171,7 +171,8 @@ def dic_check():
                 temp[5-j] = vocab[i-j][0]
             if(i+j < vocab_count):
                 temp[5+j] = vocab[i-j][0]
-    print(temp)
+        print(temp)
+    
 
 
 
@@ -183,8 +184,8 @@ if __name__ == '__main__':
     vocab_check()
     dic_check()
     print(corpus_text)
-    for i in vocab:
-        print(i)
+    #for i in vocab:
+    #    print(i)
     print("Total is " + str(len(vocab)) + " word")
 
 
