@@ -39,7 +39,10 @@ def create_dic(i):
     txt_file.close()
     raw = re.split(r'\n', text)
     tmp = raw[0]
+    
+    print(tmp)
     raw[0] = tmp.replace("\ufeff'", "")
+    print(raw[0])
     for comp in raw:
         eval("%s.append(comp)" %dic_list[i])
     #eval("%s[0].replace('\ufeff', '')" %dic_list[i])
@@ -144,12 +147,8 @@ def alphanum(word):
         if(not Num(char) or not special_char(char)):
             tmp += char
     if(tmp != "" and count > 0):
-        #print(tmp)
-        #print(count)
         return True
     else :
-        #print(tmp)
-        #print(count)
         return False
 
 def Num(word):
