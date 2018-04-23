@@ -144,12 +144,12 @@ def alphanum(word):
         if(not Num(char) or not special_char(char)):
             tmp += char
     if(tmp != "" and count > 0):
-        print(tmp)
-        print(count)
+        #print(tmp)
+        #print(count)
         return True
     else :
-        print(tmp)
-        print(count)
+        #print(tmp)
+        #print(count)
         return False
 
 def Num(word):
