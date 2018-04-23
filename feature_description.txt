@@ -26,13 +26,19 @@ ________|_______________________________________________________________________
 10  	|	w+3 = vocab 
 11  	|	w+4 = vocab 
 12  	|	w+5 = vocab 
-13    	|	is_in_D.. = D , D_start , D_in , out
-14    	|	alphanum = true , false
-15    	|	Num = true , false
-16    	|	special_char = true , false
-17    	|	English = true , false
-18    	|	blank_front = true , false
-19    	|	blank_end = true , false
-20    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
-21 to n	|	dict
+13    	|	alphanum = true , false
+14    	|	Num = true , false
+15    	|	special_char = true , false
+16    	|	English = true , false
+17    	|	blank_front = true , false
+18    	|	blank_end = true , false
+19 to 29|	common dict
+30 to 40|	loc_name dict (w-5-->w0-->w+5)
+41 to 51|	loc_clue dict (w-5-->w0-->w+5)
+52 to 62|	org_name dict (w-5-->w0-->w+5)
+63 to 73|	org_clue dict (w-5-->w0-->w+5)
+74 to 84|	per_clue dict (w-5-->w0-->w+5)
+85 to 95|	per_first dict (w-5-->w0-->w+5)
+96 to 106|	per_last dict (w-5-->w0-->w+5)
+107    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
 ________|_______________________________________________________________________________________________________________________________________
