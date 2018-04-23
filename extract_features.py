@@ -40,7 +40,7 @@ def create_dic(i):
     raw = re.split(r'\n', text)
     eval("%s.append(raw[0])" %dic_list[i])
     tmp = ""
-    eval("tmp = %s.pop" %dic_list[i])
+    tmp = eval(" %s.pop" %dic_list[i])
     print(tmp)
     tmp2 = tmp.replace("\ufeff", "")
     print(tmp2)
