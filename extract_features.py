@@ -163,7 +163,7 @@ def English(word):
     return word.isalpha()
 
 def dic_check():
-    temp = [ool,ool,ool,ool,ool,ool,ool,ool,ool,ool,ool]
+    temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
     for i in range(vocab_count):
         temp[5] = vocab[i][0]
         for j in range(5):
