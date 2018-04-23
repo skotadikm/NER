@@ -41,9 +41,9 @@ def create_dic(i):
     raw = re.split(r'\n', text)
     for comp in raw:
         eval("%s.append(comp)" %dic_list[i])
-    oldstr = dic[0]
-    dic[0] = oldstr.replace("\ufeff", "")
-    print(dic)    
+    #oldstr = dic_list[0]
+    #dic_list[0] = oldstr.replace("\ufeff", "")
+    print(common)    
 
 def read_txt(filenames):
     global corpus_text
