@@ -37,7 +37,6 @@ def create_dic(i):
     txt_file = open(filenames+".txt","r",encoding="utf8")
     text = txt_file.read()
     txt_file.close()
-    print (text)
     raw = re.split(r'\n', text)
     tmp = raw[0]
     raw[0] = tmp.replace("\ufeff'", "")
