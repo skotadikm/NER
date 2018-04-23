@@ -170,7 +170,7 @@ def dic_check():
             if(i-j >= 0):
                 temp[5-j] = vocab[i-j][0]
             if(i+j < vocab_count):
-                temp[5+j] = vocab[i-j][0]
+                temp[5+j] = vocab[i+j][0]
         print(temp)
     
 
