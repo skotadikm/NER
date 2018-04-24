@@ -502,8 +502,8 @@ if __name__ == '__main__':
     vocab_check()
     dic_check()
     print(corpus_text)
-    #for i in vocab:
-    #    print(i)
+    for i in vocab:
+        print(i)
     print("Total is " + str(len(vocab)) + " word")
     # god tum ja
     f = open("output.txt","w+")
