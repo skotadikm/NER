@@ -33,15 +33,15 @@ per_last = []
 
 def create_dic(i):
     #แก้ไขpath dic
-    global dic_list
-    filenames = dic_list[i]
+    #global dic_list
+    filenames = dic_list[i][0]
     txt_file = open(filenames+".txt","r",encoding="utf-8-sig")
     text = txt_file.read()
     txt_file.close()
     raw = re.split(r'\n', text)
     for comp in raw:
-        #dic_list[i].append(comp)
-        eval("%s.append(comp)" %dic_list[i])
+        dic_list[i].append(comp)
+        #eval("%s.append(comp)" %dic_list[i])
 
 def read_txt(filenames):
     global corpus_text
