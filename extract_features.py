@@ -40,8 +40,8 @@ def create_dic(i):
     txt_file.close()
     raw = re.split(r'\n', text)
     for comp in raw:
-        dic_list[i].append(comp)
-        #eval("%s.append(comp)" %dic_list[i])
+        #dic_list[i].append(comp)
+        eval("%s.append(comp)" %dic_list[i])
 
 def read_txt(filenames):
     global corpus_text
