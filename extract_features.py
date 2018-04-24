@@ -170,9 +170,9 @@ def dic_check():
         init = 19
         for k in range(len(dic_list)):    
             check_list = match_11(dic_list[k],temp,check_list)
-            print(check_list)
             for l in range(len(temp)):
                 vocab[i][init+l] = check_list[l]
+            print(check_list)
             check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
             init += 11
 
@@ -488,7 +488,7 @@ def match_2(dic, temp, check_list):
     return check_list
 
 def dic_compare(dic, test):
-    for word in dic[1:]:
+    for word in dic:
         if(test == word):
             test = dic[0]
         else:
