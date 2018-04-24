@@ -522,6 +522,7 @@ def match_2(dic, temp, check_list):
 
 def dic_compare(dic, test):
     for word in dic:
+        print(word)
         if(test == word):
             test = dic[0]
             return test
