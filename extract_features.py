@@ -164,6 +164,7 @@ def dic_check():
             if(i+j < vocab_count):
                 temp[5+j] = vocab[i+j][0]
         ########ได้list w ที่มาเช็ค
+        print(temp)
         init = 19
         for k in range(len(dic_list)):
             new_temp = temp    
@@ -497,8 +498,8 @@ if __name__ == '__main__':
     vocab_check()
     dic_check()
     print(corpus_text)
-    for i in vocab:
-        print(i)
+    #for i in vocab:
+    #    print(i)
     print("Total is " + str(len(vocab)) + " word")
     # god tum ja
     f = open("output.txt","w+")
