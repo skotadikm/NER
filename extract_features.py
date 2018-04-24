@@ -225,8 +225,8 @@ def match_10(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_9(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_9(dic, temp):
@@ -262,8 +262,8 @@ def match_9(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_8(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_8(dic, temp):
@@ -298,8 +298,8 @@ def match_8(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_7(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_7(dic, temp):
@@ -333,8 +333,8 @@ def match_7(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_6(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_6(dic, temp):
@@ -367,8 +367,8 @@ def match_6(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_5(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_5(dic, temp):
@@ -400,8 +400,8 @@ def match_5(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_4(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_4(dic, temp):
@@ -432,8 +432,8 @@ def match_4(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_3(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_3(dic, temp):
@@ -463,8 +463,8 @@ def match_3(dic, temp):
             new_temp.append(temp[i])
     if(new_temp != []):
         new_temp = match_2(dic, new_temp)
-            for i in range(len(new_temp)):
-                temp[pointer+i] = new_temp[i]
+        for i in range(len(new_temp)):
+            temp[pointer+i] = new_temp[i]
     return temp
 
 def match_2(dic, temp):
