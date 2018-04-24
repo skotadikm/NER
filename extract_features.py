@@ -173,6 +173,7 @@ def dic_check():
             for l in range(len(temp)):
                 vocab[i][init+l] = check_list[l]
             print(check_list)
+            print(temp)
             check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
             init += 11
 
@@ -503,7 +504,6 @@ if __name__ == '__main__':
     create_vocab(corpus_text)
     vocab_check()
     dic_check()
-    print(dic_list[3])
     #for i in vocab:
     #    print(i)
     print("Total is " + str(len(vocab)) + " word")
