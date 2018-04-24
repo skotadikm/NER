@@ -469,7 +469,7 @@ def match_3(dic, temp, check_list):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
-            new_checklist.append(check_list[i])
+            new_check_list.append(check_list[i])
     if(new_temp != []):
         new_temp = match_2(dic, new_temp, new_check_list)
         for i in range(len(new_temp)):
