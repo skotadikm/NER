@@ -521,7 +521,7 @@ def match_2(dic, temp, check_list):
     return check_list
 
 def dic_compare(dic, test):
-    for word in dic[1:]:
+    for word in dic:
         if(test == word):
             test = dic[0]
             return test
