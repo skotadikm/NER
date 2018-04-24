@@ -170,6 +170,7 @@ def dic_check():
         init = 19
         for k in range(len(dic_list)):    
             check_list = match_11(dic_list[k],temp,check_list)
+            print(check_list)
             for l in range(len(temp)):
                 vocab[i][init+l] = check_list[l]
             check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
