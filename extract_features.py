@@ -477,7 +477,6 @@ def match_2(dic, temp, check_list):
     for i in range(len(temp)):
         if(check_list[i] == "False" and i+1 < len(temp)):
             word = temp[i] + temp[i+1]
-            print(word)
             result = dic_compare(dic, word)
             if(result == dic[0]):
                 check_list[i] = dic[0] + "_start"
@@ -492,9 +491,10 @@ def dic_compare(dic, test):
     for word in dic[1:]:
         if(test == word):
             test = dic[0]
+        return test
         else:
             test = "False"
-            return test
+        return test
 
 if __name__ == '__main__':
     read_txt(filename)
