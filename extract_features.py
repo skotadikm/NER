@@ -173,7 +173,8 @@ def dic_check():
             init += 11
 
 def match_11(dic, temp):
-    word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5] + temp[i+6] + temp[i+7] + temp[i+8] + temp[i+9] + temp[i+10]
+    for i in range(len(temp)):
+        word += temp[i]
     result = dic_compare(dic, word)
     if(result == dic[0]):
                 temp[i] = dic[0] + "_start"
