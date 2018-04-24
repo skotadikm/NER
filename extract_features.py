@@ -163,7 +163,7 @@ def dic_check():
                 temp[5-j] = vocab[i-j][0]
             if(i+j < vocab_count):
                 temp[5+j] = vocab[i+j][0]
-            if(i+j > vocab_count):
+            if(i+j >= vocab_count):
                 temp[5+j] = "ool"
         ########ได้list w ที่มาเช็ค
         print(temp)
