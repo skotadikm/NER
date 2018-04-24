@@ -503,7 +503,7 @@ if __name__ == '__main__':
     create_vocab(corpus_text)
     vocab_check()
     dic_check()
-    print(dic_list[4])
+    print(dic_list[3])
     #for i in vocab:
     #    print(i)
     print("Total is " + str(len(vocab)) + " word")
