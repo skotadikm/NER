@@ -170,7 +170,7 @@ if __name__ == '__main__':
         create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
-    print(dic_list[0])
+    print(dic_list[2])
     #dic_check()
     print(corpus_text)
     #for i in vocab:
