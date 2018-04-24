@@ -522,13 +522,9 @@ def match_2(dic, temp, check_list):
 
 def dic_compare(dic, test):
     for word in dic:
-        print(word)
         if(test == word):
-            test = dic[0]
-            return test
-        else:
-            test = "False"
-    return test
+            return dic[0]
+    return "False"
 
 if __name__ == '__main__':
     read_txt(filename)
