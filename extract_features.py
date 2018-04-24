@@ -445,6 +445,7 @@ def match_4(dic, temp, check_list):
 
 def match_3(dic, temp, check_list):
     new_temp = []
+    new_checklist = []
     pointer = 12
     for i in range(len(temp)):
         if(check_list[i] == "False" and i+2 < len(temp)):
@@ -455,7 +456,7 @@ def match_3(dic, temp, check_list):
                 check_list[i+1] = dic[0] + "_cont"
                 check_list[i+2] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_2(dic, new_temp, check_list)
+                    new_temp = match_2(dic, new_temp, new_check_list)
                     for j in range(len(new_temp)):
                         check_list[pointer+j] = new_temp[j]
                 new_temp = []
@@ -468,8 +469,9 @@ def match_3(dic, temp, check_list):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
+            new_checklist.append(check_list[i])
     if(new_temp != []):
-        new_temp = match_2(dic, new_temp, check_list)
+        new_temp = match_2(dic, new_temp, new_check_list)
         for i in range(len(new_temp)):
             check_list[pointer+i] = new_temp[i]
     return check_list
