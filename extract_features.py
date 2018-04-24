@@ -156,6 +156,7 @@ def English(word):
 
 def dic_check():
     temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
+    check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
     for i in range(vocab_count):
         temp[5] = vocab[i][0]
         for j in range(6):
@@ -166,330 +167,331 @@ def dic_check():
             if(i+j >= vocab_count):
                 temp[5+j] = "ool"
         ########ได้list w ที่มาเช็ค
-        print(temp)
         init = 19
-        for k in range(len(dic_list)):
-            new_temp = temp    
-            new_temp = match_11(dic_list[k],new_temp)
+        for k in range(len(dic_list)):    
+            check_list = match_11(dic_list[k],temp,check_list)
             for l in range(len(temp)):
-                vocab[i][init+l] = new_temp[l]
+                vocab[i][init+l] = check_list[l]
+            check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
             init += 11
 
-def match_11(dic, temp):
+def match_11(dic, temp, check_list):
     word = ""
     for i in range(len(temp)):
         word += temp[i]
     result = dic_compare(dic, word)
     if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_cont"
-                temp[i+6] = dic[0] + "_cont"
-                temp[i+7] = dic[0] + "_cont"
-                temp[i+8] = dic[0] + "_cont"
-                temp[i+9] = dic[0] + "_cont"
-                temp[i+10] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_cont"
+                check_list[i+6] = dic[0] + "_cont"
+                check_list[i+7] = dic[0] + "_cont"
+                check_list[i+8] = dic[0] + "_cont"
+                check_list[i+9] = dic[0] + "_cont"
+                check_list[i+10] = dic[0] + "_end"
     else:
-        temp = match_10(dic, temp)
-    return temp
+        check_list = match_10(dic, temp, check_list)
+    return check_list
 
-def match_10(dic, temp):
+def match_10(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+9 < len(temp)):
+        if(check_list[i] == "False" and i+9 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5] + temp[i+6] + temp[i+7] + temp[i+8] + temp[i+9]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_cont"
-                temp[i+6] = dic[0] + "_cont"
-                temp[i+7] = dic[0] + "_cont"
-                temp[i+8] = dic[0] + "_cont"
-                temp[i+9] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_cont"
+                check_list[i+6] = dic[0] + "_cont"
+                check_list[i+7] = dic[0] + "_cont"
+                check_list[i+8] = dic[0] + "_cont"
+                check_list[i+9] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_9(dic, new_temp)
+                    new_temp = match_9(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_9(dic, new_temp)
+        new_temp = match_9(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_9(dic, temp):
+def match_9(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+8 < len(temp)):
+        if(check_list[i] == "False" and i+8 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5] + temp[i+6] + temp[i+7] + temp[i+8]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_cont"
-                temp[i+6] = dic[0] + "_cont"
-                temp[i+7] = dic[0] + "_cont"
-                temp[i+8] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_cont"
+                check_list[i+6] = dic[0] + "_cont"
+                check_list[i+7] = dic[0] + "_cont"
+                check_list[i+8] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_8(dic, new_temp)
+                    new_temp = match_8(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_8(dic, new_temp)
+        new_temp = match_8(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_8(dic, temp):
+def match_8(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+7 < len(temp)):
+        if(check_list[i] == "False" and i+7 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5] + temp[i+6] + temp[i+7]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_cont"
-                temp[i+6] = dic[0] + "_cont"
-                temp[i+7] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_cont"
+                check_list[i+6] = dic[0] + "_cont"
+                check_list[i+7] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_7(dic, new_temp)
+                    new_temp = match_7(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_7(dic, new_temp)
+        new_temp = match_7(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_7(dic, temp):
+def match_7(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+6 < len(temp)):
+        if(check_list[i] == "False" and i+6 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5] + temp[i+6]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_cont"
-                temp[i+6] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_cont"
+                check_list[i+6] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_6(dic, new_temp)
+                    new_temp = match_6(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_6(dic, new_temp)
+        new_temp = match_6(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_6(dic, temp):
+def match_6(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+5 < len(temp)):
+        if(check_list[i] == "False" and i+5 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4] + temp[i+5]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_cont"
-                temp[i+5] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_cont"
+                check_list[i+5] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_5(dic, new_temp)
+                    new_temp = match_5(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_5(dic, new_temp)
+        new_temp = match_5(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_5(dic, temp):
+def match_5(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+4 < len(temp)):
+        if(check_list[i] == "False" and i+4 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3] + temp[i+4]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_cont"
-                temp[i+4] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_cont"
+                check_list[i+4] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_4(dic, new_temp)
+                    new_temp = match_4(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_4(dic, new_temp)
+        new_temp = match_4(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_4(dic, temp):
+def match_4(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+3 < len(temp)):
+        if(check_list[i] == "False" and i+3 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2] + temp[i+3]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_cont"
-                temp[i+3] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_cont"
+                check_list[i+3] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_3(dic, new_temp)
+                    new_temp = match_3(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_3(dic, new_temp)
+        new_temp = match_3(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_3(dic, temp):
+def match_3(dic, temp, check_list):
     new_temp = []
     pointer = 12
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+2 < len(temp)):
+        if(check_list[i] == "False" and i+2 < len(temp)):
             word = temp[i] + temp[i+1] + temp[i+2]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_cont"
-                temp[i+2] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_cont"
+                check_list[i+2] = dic[0] + "_end"
                 if(new_temp != []):
-                    new_temp = match_2(dic, new_temp)
+                    new_temp = match_2(dic, new_temp, check_list)
                     for j in range(len(new_temp)):
-                        temp[pointer+j] = new_temp[j]
+                        check_list[pointer+j] = new_temp[j]
                 new_temp = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
-        elif(temp[i] == "False"):
+        elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
             new_temp.append(temp[i])
     if(new_temp != []):
-        new_temp = match_2(dic, new_temp)
+        new_temp = match_2(dic, new_temp, check_list)
         for i in range(len(new_temp)):
-            temp[pointer+i] = new_temp[i]
-    return temp
+            check_list[pointer+i] = new_temp[i]
+    return check_list
 
-def match_2(dic, temp):
+def match_2(dic, temp, check_list):
     for i in range(len(temp)):
-        if(temp[i] == "False" and i+1 < len(temp)):
+        if(check_list[i] == "False" and i+1 < len(temp)):
             word = temp[i] + temp[i+1]
             result = dic_compare(dic, word)
             if(result == dic[0]):
-                temp[i] = dic[0] + "_start"
-                temp[i+1] = dic[0] + "_end"
+                check_list[i] = dic[0] + "_start"
+                check_list[i+1] = dic[0] + "_end"
             else:
-                temp[i] = dic_compare(dic,temp[0])
-        elif(temp[i] == "False"):
-            temp[i] = dic_compare(dic,temp[0])
-    return temp
+                check_list[i] = dic_compare(dic,temp[0])
+        elif(check_list[i] == "False"):
+            check_list[i] = dic_compare(dic,temp[0])
+    return check_list
 
 def dic_compare(dic, test):
     for word in dic[1:]:
         if(test == word):
             test = dic[0]
+        else:
+            test = "False"
             return test
 
 if __name__ == '__main__':
