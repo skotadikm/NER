@@ -165,7 +165,7 @@ def dic_check():
                 temp[5+j] = vocab[i+j][0]
         ########ได้list w ที่มาเช็ค
         init = 19
-        for k in range(dic_list):
+        for k in range(len(dic_list)):
             new_temp = temp    
             new_temp = match_11(dic_list[k],new_temp)
             for l in range(len(temp)):
