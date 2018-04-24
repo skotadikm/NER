@@ -477,6 +477,7 @@ def match_2(dic, temp, check_list):
     for i in range(len(temp)):
         if(check_list[i] == "False" and i+1 < len(temp)):
             word = temp[i] + temp[i+1]
+            print(word)
             result = dic_compare(dic, word)
             if(result == dic[0]):
                 check_list[i] = dic[0] + "_start"
@@ -488,7 +489,7 @@ def match_2(dic, temp, check_list):
     return check_list
 
 def dic_compare(dic, test):
-    for word in dic:
+    for word in dic[1:]:
         if(test == word):
             test = dic[0]
         else:
@@ -503,8 +504,8 @@ if __name__ == '__main__':
     vocab_check()
     dic_check()
     print(corpus_text)
-    for i in vocab:
-        print(i)
+    #for i in vocab:
+    #    print(i)
     print("Total is " + str(len(vocab)) + " word")
     # god tum ja
     f = open("output.txt","w+")
