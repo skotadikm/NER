@@ -445,7 +445,7 @@ def match_4(dic, temp, check_list):
 
 def match_3(dic, temp, check_list):
     new_temp = []
-    new_checklist = []
+    new_check_list = []
     pointer = 12
     for i in range(len(temp)):
         if(check_list[i] == "False" and i+2 < len(temp)):
