@@ -501,6 +501,7 @@ if __name__ == '__main__':
     #for i in vocab:
     #    print(i)
     print("Total is " + str(len(vocab)) + " word")
+    print(vocab_count)
     # god tum ja
     f = open("output.txt","w+")
     for List in vocab:
