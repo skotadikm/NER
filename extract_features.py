@@ -173,6 +173,7 @@ def dic_check():
             init += 11
 
 def match_11(dic, temp):
+    word = ""
     for i in range(len(temp)):
         word += temp[i]
     result = dic_compare(dic, word)
