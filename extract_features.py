@@ -491,10 +491,10 @@ def dic_compare(dic, test):
     for word in dic[1:]:
         if(test == word):
             test = dic[0]
-        return test
+            return test
         else:
             test = "False"
-        return test
+            return test
 
 if __name__ == '__main__':
     read_txt(filename)
