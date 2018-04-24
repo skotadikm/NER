@@ -527,7 +527,7 @@ def dic_compare(dic, test):
             return test
         else:
             test = "False"
-            return test
+    return test
 
 if __name__ == '__main__':
     read_txt(filename)
