@@ -482,9 +482,9 @@ def match_2(dic, temp, check_list):
                 check_list[i] = dic[0] + "_start"
                 check_list[i+1] = dic[0] + "_end"
             else:
-                check_list[i] = dic_compare(dic,temp[0])
+                check_list[i] = dic_compare(dic,temp[i])
         elif(check_list[i] == "False"):
-            check_list[i] = dic_compare(dic,temp[0])
+            check_list[i] = dic_compare(dic,temp[i])
     return check_list
 
 def dic_compare(dic, test):
