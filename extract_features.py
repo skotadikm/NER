@@ -21,7 +21,7 @@ front_space = 0
 vocab_count = 0
 
 #original dictionary
-dic_list = ["common","loc_name","loc_clue","org_name","org_clue","per_clue","per_first","per_last"]
+dic_list = [["common"],["loc_name"],["loc_clue"],["org_name"],["org_clue"],["per_clue"],["per_first"],["per_last"]]
 common = []
 loc_name = []
 loc_clue = []
