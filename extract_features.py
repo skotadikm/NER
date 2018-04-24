@@ -460,11 +460,13 @@ def match_3(dic, temp, check_list):
                     for j in range(len(new_temp)):
                         check_list[pointer+j] = new_temp[j]
                 new_temp = []
+                new_check_list = []
                 pointer = 12
             else:
                 if(pointer > i):
                     pointer = i
                 new_temp.append(temp[i])
+                new_check_list.append(check_list[i])
         elif(check_list[i] == "False"):
             if(pointer > i):
                     pointer = i
