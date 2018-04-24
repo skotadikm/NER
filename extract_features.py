@@ -39,7 +39,8 @@ def create_dic(i):
     txt_file.close()
     raw = re.split(r'\n', text)
     for comp in raw:
-        eval("%s.append(comp)" %dic_list[i])
+        dic_list[i].append(comp)
+        #eval("%s.append(comp)" %dic_list[i])
 
 def read_txt(filenames):
     global corpus_text
@@ -162,37 +163,22 @@ def special_char(word):
 def English(word):
     return word.isalpha()
 
-def dic_check():
-    temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
-    for i in range(vocab_count):
-        temp[5] = vocab[i][0]
-        for j in range(6):
-            if(i-j >= 0):
-                temp[5-j] = vocab[i-j][0]
-            if(i+j < vocab_count):
-                temp[5+j] = vocab[i+j][0]
-        print(temp)
-    
-
-
-
 if __name__ == '__main__':
     read_txt(filename)
     for i in range(len(dic_list)):
         create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
-    dic_check()
+    print(dic_list[0])
+    #dic_check()
     print(corpus_text)
     #for i in vocab:
     #    print(i)
     print("Total is " + str(len(vocab)) + " word")
-
-
-# god tum ja
+    # god tum ja
     f = open("output.txt","w+")
     for List in vocab:
         for word in List:
-            f.write("|"+str(word))
-        f.write("|"+"\n")
+            f.write(str(word)+" ")
+        f.write("\n")
     f.close() 
