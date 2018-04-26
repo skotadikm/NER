@@ -13,6 +13,7 @@
 #####################################################################################
 import re
 import sys
+import glob
 
 filename = sys.argv[1]
 vocab = []
@@ -33,7 +34,7 @@ def create_dic(i):
     for comp in raw:
         dic_list[i].append(comp)
 
-def read_txt(filenames):
+def read_corpus(filenames):
     global corpus_text
     txt_file = open(filenames,"r",encoding="utf-8-sig")
     corpus_text = txt_file.read()
@@ -103,6 +104,8 @@ def create_vocab(corpus_text):
                     i = vocab_count-1
                     vocab[i][18] = "True"
                     front_space = 1
+    for i in range(vocab_count):
+        del vocab[i][1]
 
 def vocab_check():
     global vocab
@@ -527,14 +530,14 @@ def dic_compare(dic, test):
     return "False"
 
 if __name__ == '__main__':
-    read_txt(filename)
+    read_corpus(filename)
     for i in range(len(dic_list)):
         create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
-    dic_check()
-    #for i in vocab:
-    #    print(i)
+    
+    for i in vocab:
+        print(i)
     print("Total is " + str(len(vocab)) + " word")
     # god tum ja
     f = open("output.txt","w+")
