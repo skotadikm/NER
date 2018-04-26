@@ -14,31 +14,31 @@ original ! vocab_count ! wn
 position|	feature
 ________|_______________________________________________________________________________________________________________________________________
 0     	|	original = real word
-1     	|	vocab_count = amount of vocabs
-2  	|	w0 = vocab 
-3  	|	w-1 = vocab 
-4  	|	w-2 = vocab 
-5  	|	w-3 = vocab 
-6  	|	w-4 = vocab 
-7  	|	w-5 = vocab 
-8  	|	w+1 = vocab 
-9  	|	w+2 = vocab 
-10  	|	w+3 = vocab 
-11  	|	w+4 = vocab 
-12  	|	w+5 = vocab 
-13    	|	alphanum = true , false
-14    	|	Num = true , false
-15    	|	special_char = true , false
-16    	|	English = true , false
-17    	|	blank_front = true , false
-18    	|	blank_end = true , false
-19 to 29|	common dict
-30 to 40|	loc_name dict (w-5-->w0-->w+5)
-41 to 51|	loc_clue dict (w-5-->w0-->w+5)
-52 to 62|	org_name dict (w-5-->w0-->w+5)
-63 to 73|	org_clue dict (w-5-->w0-->w+5)
-74 to 84|	per_clue dict (w-5-->w0-->w+5)
-85 to 95|	per_first dict (w-5-->w0-->w+5)
-96 to 106|	per_last dict (w-5-->w0-->w+5)
-107    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
+1  	|	w0 = vocab 
+2  	|	w-1 = vocab 
+3  	|	w-2 = vocab 
+4  	|	w-3 = vocab 
+5  	|	w-4 = vocab 
+6  	|	w-5 = vocab 
+7  	|	w+1 = vocab 
+8  	|	w+2 = vocab 
+9  	|	w+3 = vocab 
+10  	|	w+4 = vocab 
+11  	|	w+5 = vocab 
+12    	|	alphanum = true , false
+13    	|	Num = true , false
+14    	|	special_char = true , false
+15    	|	English = true , false
+16    	|	blank_front = true , false
+17    	|	blank_end = true , false
+18	|	common dict
+19	|	loc_name dict
+20	|	loc_clue dict
+21	|	org_name dict
+22	|	org_clue dict
+23	|	per_clue dict
+24	|	per_first dict
+25	|	per_last dict
+26-n	|	เพิ่มอีก n dic
+n+1    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
 ________|_______________________________________________________________________________________________________________________________________
