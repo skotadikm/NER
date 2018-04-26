@@ -1,5 +1,5 @@
 #vocab is list of word features
-#word feature = [original word,word counter,w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),class]
+#word feature = [original word,w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),class]
 #if it has dicts,dict will be appended in the end of feature list.
 
 #define
@@ -15,7 +15,7 @@ import re
 import sys
 import glob
 
-filename = sys.argv[1]
+corpus = sys.argv[1]
 vocab = []
 corpus_text = ""
 front_space = 0
@@ -36,7 +36,9 @@ def create_dic(i):
 
 def read_corpus(filenames):
     global corpus_text
-    txt_file = open(filenames,"r",encoding="utf-8-sig")
+    glob.glob('corpus')
+    for i in glob:
+        txt_file = open(i,"r",encoding="utf-8-sig")
     corpus_text = txt_file.read()
     txt_file.close()
 
@@ -159,7 +161,35 @@ def special_char(word):
 def English(word):
     return word.isalpha()
 
-def dic_check():
+def dic_check(dic,index):
+    tmp = ""
+    check = False
+    init = 0
+    counter = 0
+    for i in range(vocab_count):
+        if(check):
+            tmp += vocab[i][0]
+            counter += 1
+        else:
+            if(counter == 1):
+                vocab[init][index] = dic[0]
+            elif(counter > 1):
+                vocab[init][index] = dic[0] + "_start"
+                vocab[init+counter][index] = dic[0] + "_end"
+                for k in range(1,counter-1):
+                    vocab[init+k][index] = dic[0] + "_cont"
+            tmp = vocab[i][0]
+            intit = i
+        for word in dic:
+            if(tmpเ is word substring):
+                check = True
+                break
+            check = False
+            
+
+            
+
+def dic_check_11words():
     temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
     check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
     for i in range(vocab_count):
