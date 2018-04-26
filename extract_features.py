@@ -84,7 +84,7 @@ def create_vocab(corpus_text):
 
 
                 #add dic feature n dic
-                feature_extend = 8*11
+                feature_extend = len(dic_list)
                 for i in range(feature_extend):
                     tmp.append("False")
                 ######################
