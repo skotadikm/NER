@@ -104,8 +104,6 @@ def create_vocab(corpus_text):
                     i = vocab_count-1
                     vocab[i][18] = "True"
                     front_space = 1
-    for i in range(vocab_count):
-        del vocab[i][1]
 
 def vocab_check():
     global vocab
@@ -115,6 +113,7 @@ def vocab_check():
             vocab[i][2] = vocab[i][0]
         else:
             vocab[i][2] = "unknown"
+
     for i in range(vocab_count):
         f = 3
         e = 8
@@ -125,6 +124,9 @@ def vocab_check():
             if(i+j < vocab_count-1):
                 vocab[i][e] = vocab[i+j][2]
                 e += 1
+    for i in range(vocab_count):
+        del vocab[i][1]
+
 
 def alphanum(word):
     tmp = ""
