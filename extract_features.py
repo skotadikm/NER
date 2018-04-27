@@ -212,6 +212,7 @@ def dic_check(dic,index):
             if(check_substring):
                 checklist[1] += 1
             else:
+                tmp = ""
                 break
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
