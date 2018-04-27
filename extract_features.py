@@ -218,11 +218,11 @@ def dic_check(dic,index):
             checklist.append(check_in_dic)
             check_in_dic = False
             check_substring = False
-        for i in range(checklist[1]+1):
+        for i in range(checklist[1]):
             if(checklist[checklist[1]-i+1]):
                 checklist[1] = checklist[1] - i
                 break
-            if(checklist[1] - i == 0):
+            elif(checklist[1] - i == 1):
                 checklist[1] = 0
             checklist.pop()
         if(checklist[1] > maxlength):
