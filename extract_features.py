@@ -199,7 +199,7 @@ def dic_check(dic,index):
     for i in range(vocab_count):
         checklist = ["False",0]
         for j in range(vocab_count):
-            if(i+j > vocab_count):
+            if(i+j > vocab_count-1):
                 break
             tmp += vocab[i+j][0]
             print(tmp)
