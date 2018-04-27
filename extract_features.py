@@ -199,8 +199,7 @@ def dic_check(dic,index):
     for i in range(vocab_count):
         checklist = ["False",0]
         for j in range(vocab_count):
-            if(check_substring):
-                tmp += vocab[j][0]
+            tmp += vocab[j][0]
             for word in dic:
                 if(tmp == word):
                     check_in_dic = True
@@ -208,10 +207,10 @@ def dic_check(dic,index):
                     check_substring = True    
                 if(check_in_dic and check_substring):
                     break
-            temp.append(check_in_dic)
+            checklist.append(check_in_dic)
             if(check_substring):
                 checklist[1] += 1
-            if(check_substring == False):
+            else:
                 break
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
