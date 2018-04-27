@@ -218,6 +218,13 @@ def dic_check(dic,index):
             checklist.append(check_in_dic)
             check_in_dic = False
             check_substring = False
+        for i in range(checklist[1]):
+            if(checklist[checklist[1]-i]):
+                checklist[1] = checklist[1] - i
+                break
+            checklist.pop()
+            if(checklist[1] - i == 0):
+                checklist[1] = 0
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
         temp.append(checklist)
