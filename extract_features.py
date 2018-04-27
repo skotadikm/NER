@@ -39,7 +39,9 @@ def read_corpus(corpus):
     globlist =  glob.glob('corpus')
     for i in globlist:
         txt_file = open(i,"r",encoding="utf-8-sig")
+        print(txt_file)
         corpus_text += txt_file.read()
+        print(corpus_text)
         txt_file.close()
 
 def create_vocab(corpus_text):
