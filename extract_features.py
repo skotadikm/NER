@@ -218,7 +218,7 @@ def dic_check(dic,index):
             checklist.append(check_in_dic)
             check_in_dic = False
             check_substring = False
-        for i in range(checklist[1]):
+        for i in range(checklist[1]+1):
             if(checklist[checklist[1]-i]):
                 checklist[1] = checklist[1] - i
                 break
