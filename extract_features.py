@@ -36,8 +36,8 @@ def create_dic(i):
 
 def read_corpus(corpus):
     global corpus_text
-    glob.glob('corpus')
-    for i in glob:
+    globist =  glob.glob('corpus')
+    for i in globlist:
         txt_file = open(i,"r",encoding="utf-8-sig")
     corpus_text = txt_file.read()
     txt_file.close()
