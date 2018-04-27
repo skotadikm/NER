@@ -200,6 +200,7 @@ def dic_check(dic,index):
         checklist = ["False",0]
         for j in range(vocab_count):
             tmp += vocab[j][0]
+            print(tmp)
             for word in dic:
                 if(tmp == word):
                     check_in_dic = True
