@@ -557,7 +557,7 @@ def dic_compare(dic, test):
     return "False"
 
 if __name__ == '__main__':
-    read_corpus(filename)
+    read_corpus(corpus)
     for i in range(len(dic_list)):
         create_dic(i)
     create_vocab(corpus_text)
