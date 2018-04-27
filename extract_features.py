@@ -227,11 +227,11 @@ def dic_check(dic,index):
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
         temp.append(checklist)
-    temp =  dic_summary(temp, maxlength)
+    temp =  dic_summary(temp, maxlength, dic)
     print(temp)
             
 
-def dic_summary(temp, maxlength):
+def dic_summary(temp, maxlength, dic):
     #temp = [[label,maxlength,1,2,3,4,...,maxlength]]
     for i in range(maxlength):
         for j in range(vocab_count):
