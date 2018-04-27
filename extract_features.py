@@ -206,7 +206,7 @@ def dic_check(dic,index):
             for word in dic:
                 if(tmp == word):
                     check_in_dic = True
-                if(tmp in word):
+                if(word.startswith(tmp)):
                     check_substring = True    
                 if(check_in_dic and check_substring):
                     break            
