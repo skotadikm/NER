@@ -209,13 +209,13 @@ def dic_check(dic,index):
                 if(tmp in word):
                     check_substring = True    
                 if(check_in_dic and check_substring):
-                    break
-            checklist.append(check_in_dic)
+                    break            
             if(check_substring):
                 checklist[1] += 1
             else:
                 tmp = ""
                 break
+            checklist.append(check_in_dic)
             check_in_dic = False
             check_substring = False
         if(checklist[1] > maxlength):
