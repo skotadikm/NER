@@ -39,7 +39,7 @@ def read_corpus(corpus):
     globlist =  glob.glob('corpus')
     print(globlist)
     print(glob)
-    for i in glob.glob('corpus')
+    for i in glob.glob('corpus'):
         txt_file = open(i,"r",encoding="utf-8-sig")
         print(txt_file)
         corpus_text += txt_file.read()
