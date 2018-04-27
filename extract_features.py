@@ -199,7 +199,7 @@ def dic_check(dic,index):
     for i in range(vocab_count):
         checklist = ["False",0]
         for j in range(vocab_count):
-            if(check):
+            if(check_substring):
                 tmp += vocab[j][0]
             for word in dic:
                 if(tmp == word):
