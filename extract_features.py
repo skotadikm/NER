@@ -202,7 +202,6 @@ def dic_check(dic,index):
             if(i+j > vocab_count-1):
                 break
             tmp += vocab[i+j][0]
-            print(tmp)
             for word in dic:
                 if(tmp == word):
                     check_in_dic = True
@@ -228,8 +227,6 @@ def dic_check(dic,index):
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
         temp.append(checklist)
-    print(temp)
-    print(maxlength)
     temp =  dic_summary(temp, maxlength)
     print(temp)
             
@@ -237,9 +234,9 @@ def dic_check(dic,index):
 def dic_summary(temp, maxlength):
     #temp = [[label,maxlength,1,2,3,4,...,maxlength]]
     for i in range(maxlength):
-        pointer = maxlength - 1
         for j in range(vocab_count):
             if(temp[j][1] == maxlength):
+                init = 0
                 for k in range(maxlength):
                     if(temp[j+k][0] == "False"):
                         init += 1
