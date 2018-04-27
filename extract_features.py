@@ -36,7 +36,7 @@ def create_dic(i):
 
 def read_corpus(corpus):
     global corpus_text
-    globlist =  glob.glob('corpus')
+    print(glob.glob('corpus'))
     print(globlist)
     print(glob)
     for i in glob.glob('corpus'):
