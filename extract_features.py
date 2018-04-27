@@ -34,7 +34,7 @@ def create_dic(i):
     for comp in raw:
         dic_list[i].append(comp)
 
-def read_corpus(filenames):
+def read_corpus(corpus):
     global corpus_text
     glob.glob('corpus')
     for i in glob:
