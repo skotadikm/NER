@@ -222,6 +222,7 @@ def dic_check(dic,index):
             maxlength = checklist[1]
         temp.append(checklist)
     print(temp)
+    print(maxlength)
     temp =  dic_summary(temp, maxlength)
     print(temp)
             
