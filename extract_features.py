@@ -129,7 +129,6 @@ def vocab_check():
     for i in range(vocab_count):
         del vocab[i][1]
 
-
 def alphanum(word):
     tmp = ""
     count = 0
@@ -160,12 +159,11 @@ def special_char(word):
 
 def English(word):
     return word.isalpha()
-
+"""
 def dic_check(dic,index):
     tmp = ""
     check = False
     init = 0
-    counter = 0
     for i in range(vocab_count):
         if(check):
             tmp += vocab[i][0]
@@ -185,10 +183,7 @@ def dic_check(dic,index):
                 check = True
                 break
             check = False
-            
-
-            
-
+"""            
 def dic_check_11words():
     temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
     check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
@@ -567,7 +562,6 @@ if __name__ == '__main__':
         create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
-    
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
