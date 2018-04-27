@@ -162,6 +162,7 @@ def special_char(word):
 
 def English(word):
     return word.isalpha()
+
 """
 def dic_check(dic,index):
     tmp = ""
@@ -186,7 +187,68 @@ def dic_check(dic,index):
                 check = True
                 break
             check = False
-"""            
+"""
+
+def dic_check(dic,index):
+    temp = []
+    checklist = []
+    tmp = ""
+    check_in_dic = False
+    check_substring = False
+    maxlength = 0
+    for i in range(vocab_count):
+        checklist = ["False",0]
+        for j in range(vocab_count):
+            if(check):
+                tmp += vocab[j][0]
+            for word in dic:
+                if(tmp == word):
+                    check_in_dic = True
+                if(tmp in word):
+                    check_substring = True    
+                if(check_in_dic and check_substring):
+                    break
+            temp.append(check_in_dic)
+            if(check_substring):
+                checklist[1] += 1
+            if(check_substring == False):
+                break
+        if(checklist[1] > maxlength):
+            maxlength = checklist[1]
+        check_in_dic = False
+        check_substring = False
+        temp.append(checklist)
+    print(temp)
+    temp =  dic_summary(temp, maxlength)
+    print(temp)
+            
+
+def dic_summary(temp, maxlength):
+    #temp = [[label,maxlength,1,2,3,4,...,maxlength]]
+    for i in range(maxlength):
+        pointer = maxlength - 1
+        for j in range(vocab_count):
+            if(temp[j][1] == maxlength):
+                for k in range(maxlength):
+                    if(temp[j+k][0] == "False")
+                        init += 1
+                    if(init == temp[j][1] and init > 1):
+                        temp[j][0] = dic[0] + "_start"
+                        temp[j][maxlength-1] = dic[0] + "_end"
+                        for l in range(1,max-1):
+                            temp[j][l] = dic[0] + "_cont"
+                    elif(init == temp[j][1] and init == 1):
+                        temp[j][0] = dic[0]
+                    else:
+                        for l in range(maxlength):
+                            if(init < temp[j][1]):
+                                if(temp[j][init+1]):
+                                    temp[j][1] = init
+                                    break
+                                else:
+                                    temp[j][1] = 0
+    return temp
+
 def dic_check_11words():
     temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
     check_list = ["False","False","False","False","False","False","False","False","False","False","False"]
@@ -565,6 +627,8 @@ if __name__ == '__main__':
         create_dic(i)
     create_vocab(corpus_text)
     vocab_check()
+    for i in range(len(dic_list)):
+        dic_check(dic_list[i],i)
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
