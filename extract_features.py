@@ -216,10 +216,10 @@ def dic_check(dic,index):
             else:
                 tmp = ""
                 break
+            check_in_dic = False
+            check_substring = False
         if(checklist[1] > maxlength):
             maxlength = checklist[1]
-        check_in_dic = False
-        check_substring = False
         temp.append(checklist)
     print(temp)
     temp =  dic_summary(temp, maxlength)
