@@ -40,7 +40,7 @@ def read_corpus(corpus):
     for i in globlist:
         txt_file = open(i,"r",encoding="utf-8-sig")
         corpus_text += txt_file.read()
-    txt_file.close()
+        txt_file.close()
 
 def create_vocab(corpus_text):
     global front_space
