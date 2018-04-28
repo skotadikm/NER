@@ -218,7 +218,7 @@ def dic_summary(temp, maxlength, dic):
                 if(init == temp[j][1] and init > 2):
                     temp[j][0] = dic[0] + "_start"
                     temp[j+index-1][0] = dic[0] + "_end"
-                    for l in range(1,index):
+                    for l in range(1,index-1):
                         temp[j+l][0] = dic[0] + "_cont"
                 elif(init == temp[j][1] and init == 2):
                     temp[j][0] = dic[0] + "_start"
