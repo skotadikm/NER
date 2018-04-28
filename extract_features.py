@@ -42,9 +42,6 @@ def create_dic_list(dicname):
             temp.append(comp)
         dic_list.append(temp)
         temp = []
-    for i in range(len(dic_list)):
-        print(dic_list[i][0])
-    print(dic_list[2])
 
 def create_dic(i):
     #แก้ไขpath dic
