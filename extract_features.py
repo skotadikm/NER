@@ -30,6 +30,7 @@ def create_dic_list(dicname):
     for path in tmp:
         i = re.split(r'\/', path)
         name = i[len(i)-1]
+        print(name)
 
         """
         txt_file = open(i,"r",encoding="utf-8-sig")
