@@ -27,8 +27,8 @@ dic_list = [["common"],["loc_name"],["loc_clue"],["org_name"],["org_clue"],["per
 
 def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
-    for i in tmp:
-        i = re.split(r'\/', corpus_text)
+    for path in tmp:
+        i = re.split(r'\/', path)
         print(i)
 
         """
