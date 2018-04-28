@@ -163,32 +163,6 @@ def special_char(word):
 def English(word):
     return word.isalpha()
 
-"""
-def dic_check(dic,index):
-    tmp = ""
-    check = False
-    init = 0
-    for i in range(vocab_count):
-        if(check):
-            tmp += vocab[i][0]
-            counter += 1
-        else:
-            if(counter == 1):
-                vocab[init][index] = dic[0]
-            elif(counter > 1):
-                vocab[init][index] = dic[0] + "_start"
-                vocab[init+counter][index] = dic[0] + "_end"
-                for k in range(1,counter-1):
-                    vocab[init+k][index] = dic[0] + "_cont"
-            tmp = vocab[i][0]
-            intit = i
-        for word in dic:
-            if(tmpเ is word substring):
-                check = True
-                break
-            check = False
-"""
-
 def dic_check(dic,index):
     temp = []
     checklist = []
@@ -231,7 +205,6 @@ def dic_check(dic,index):
     temp =  dic_summary(temp, maxlength, dic)
     print(temp)
             
-
 def dic_summary(temp, maxlength, dic):
     #temp = [[label,maxlength,1,2,3,4,...,maxlength]]
     for i in range(maxlength):
@@ -241,21 +214,21 @@ def dic_summary(temp, maxlength, dic):
                 for k in range(maxlength):
                     if(temp[j+k][0] == "False"):
                         init += 1
-                    if(init == temp[j][1] and init > 1):
-                        temp[j][0] = dic[0] + "_start"
-                        temp[j][maxlength-1] = dic[0] + "_end"
-                        for l in range(1,max-1):
-                            temp[j][l] = dic[0] + "_cont"
-                    elif(init == temp[j][1] and init == 1):
-                        temp[j][0] = dic[0]
-                    else:
-                        for l in range(maxlength):
-                            if(init < temp[j][1]):
-                                if(temp[j][init+1]):
-                                    temp[j][1] = init
-                                    break
-                                else:
-                                    temp[j][1] = 0
+                if(init == temp[j][1] and init > 1):
+                    temp[j][0] = dic[0] + "_start"
+                    temp[j][maxlength-1] = dic[0] + "_end"
+                    for l in range(1,max-1):
+                        temp[j][l] = dic[0] + "_cont"
+                elif(init == temp[j][1] and init == 1):
+                    temp[j][0] = dic[0]
+                else:
+                    for l in range(maxlength):
+                        if(init < temp[j][1]):
+                            if(temp[j][init+1]):
+                                temp[j][1] = init
+                                break
+                            else:
+                                temp[j][1] = 0
     return temp
 
 def dic_check_11words():
