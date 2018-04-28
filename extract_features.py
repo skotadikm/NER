@@ -23,7 +23,7 @@ front_space = 0
 vocab_count = 0
 
 #original dictionary
-dic_list = [["common"],["loc_name"],["loc_clue"],["org_name"],["org_clue"],["per_clue"],["per_first"],["per_last"]]
+dic_list = []
 
 def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
@@ -40,7 +40,8 @@ def create_dic_list(dicname):
         for comp in raw:
             temp.append(comp)
         dic_list.append(temp)
-    print(dic_list)
+    print(dic_list[3])
+
 
 def create_dic(i):
     #แก้ไขpath dic
