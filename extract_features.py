@@ -1,5 +1,5 @@
 #vocab is list of word features
-#word feature = [original word,w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),class]
+#word feature = [original word,w0,w-1,w-2,w-3,w-4,w-5,w+1,w+2,w+3,w+4,w+5,alphanum(w0),Num(w0),special_char(w0),English(w0),blank_front(w0),blank_behind(w0),dic n dic,class]
 #if it has dicts,dict will be appended in the end of feature list.
 
 #define
@@ -618,9 +618,11 @@ if __name__ == '__main__':
     vocab_check()
     for i in range(len(dic_list)):
         dic_check(dic_list[i],i)
+    """
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
+    """
     # god tum ja
     f = open("output.txt","w+")
     for List in vocab:
