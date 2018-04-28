@@ -39,7 +39,7 @@ ________|_______________________________________________________________________
 23	|	loc_clue dict
 24	|	per_clue dict
 25	|	per_last dict
-26	|	country
+26	|	country dict
 27-n	|	เพิ่มอีก n dic
 n+1    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
 ________|_______________________________________________________________________________________________________________________________________
