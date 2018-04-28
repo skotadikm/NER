@@ -16,6 +16,7 @@ import sys
 import glob
 
 corpus = sys.argv[1]
+dicname = sys.argv[1]
 vocab = []
 corpus_text = ""
 front_space = 0
@@ -23,6 +24,18 @@ vocab_count = 0
 
 #original dictionary
 dic_list = [["common"],["loc_name"],["loc_clue"],["org_name"],["org_clue"],["per_clue"],["per_first"],["per_last"]]
+
+def create_dic_list(dicname):
+    tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
+    for i in tmp:
+        i = re.split(r'\/', corpus_text)
+        print(i[len[i]])
+
+        """
+        txt_file = open(i,"r",encoding="utf-8-sig")
+        text += txt_file.read()
+        txt_file.close()
+        """
 
 def create_dic(i):
     #แก้ไขpath dic
@@ -37,12 +50,9 @@ def create_dic(i):
 def read_corpus(corpus):
     global corpus_text
     tmp = glob.glob(corpus+'*')
-    print(tmp)
     for i in tmp:
         txt_file = open(i,"r",encoding="utf-8-sig")
-        print(txt_file)
         corpus_text += txt_file.read()
-        print(corpus_text)
         txt_file.close()
 
 def create_vocab(corpus_text):
@@ -612,6 +622,7 @@ def dic_compare(dic, test):
 
 if __name__ == '__main__':
     read_corpus(corpus)
+    create_dic_list(dicname)
     for i in range(len(dic_list)):
         create_dic(i)
     create_vocab(corpus_text)
