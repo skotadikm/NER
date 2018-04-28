@@ -214,11 +214,15 @@ def dic_summary(temp, maxlength, dic):
                 for k in range(index):
                     if(temp[j+k][0] == "False"):
                         init += 1
-                if(init == temp[j][1] and init > 1):
+
+                if(init == temp[j][1] and init > 2):
                     temp[j][0] = dic[0] + "_start"
-                    temp[index-1][0] = dic[0] + "_end"
+                    temp[j+index-1][0] = dic[0] + "_end"
                     for l in range(1,index):
                         temp[j+l][0] = dic[0] + "_cont"
+                elif(init == temp[j][1] and init == 2):
+                    temp[j][0] = dic[0] + "_start"
+                    temp[j+index-1][0] = dic[0] + "_end"
                 elif(init == temp[j][1] and init == 1):
                     temp[j][0] = dic[0]
                 else:
