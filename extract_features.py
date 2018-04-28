@@ -632,8 +632,8 @@ if __name__ == '__main__':
         for word in List:
             i += 1
             f.write(str(word))
-            if(i < len(List)):
+            if(i < len(List-1)):
                 f.write("\t")
-        if(c < vocab_count):
+        if(c < vocab_count-1):
             f.write("\n")
     f.close() 
