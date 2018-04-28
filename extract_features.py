@@ -41,6 +41,7 @@ def create_dic_list(dicname):
             temp.append(comp)
         dic_list.append(temp)
     print(dic_list)
+    
         """
         txt_file = open(i,"r",encoding="utf-8-sig")
         text += txt_file.read()
