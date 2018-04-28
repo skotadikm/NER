@@ -27,6 +27,8 @@ dic_list = []
 
 def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
+    tmp.sort()
+    print(tmp)
     temp = []
     for path in tmp:
         i = re.split(r'\/', path)
@@ -627,10 +629,6 @@ def dic_compare(dic, test):
 if __name__ == '__main__':
     read_corpus(corpus)
     create_dic_list(dicname)
-    """
-    for i in range(len(dic_list)):
-        create_dic(i)
-    """
     create_vocab(corpus_text)
     vocab_check()
     """
