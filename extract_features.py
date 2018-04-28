@@ -631,6 +631,6 @@ if __name__ == '__main__':
             i += 1
             f.write(str(word))
             if(i < len(List)):
-                f.write(" ")
-        f.write("\t")
+                f.write("\t")
+        f.write("\n")
     f.close() 
