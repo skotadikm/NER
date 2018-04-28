@@ -623,12 +623,17 @@ def dic_compare(dic, test):
 if __name__ == '__main__':
     read_corpus(corpus)
     create_dic_list(dicname)
+    """
     for i in range(len(dic_list)):
         create_dic(i)
+    """
     create_vocab(corpus_text)
     vocab_check()
+    """
     for i in range(len(dic_list)):
         dic_check(dic_list[i],i)
+    """
+
     """
     for i in vocab:
         print(i)
