@@ -28,7 +28,6 @@ dic_list = []
 def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
     tmp.sort()
-    print(tmp)
     temp = []
     for path in tmp:
         i = re.split(r'\/', path)
