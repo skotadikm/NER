@@ -216,9 +216,9 @@ def dic_summary(temp, maxlength, dic):
                         init += 1
                 if(init == temp[j][1] and init > 1):
                     temp[j][0] = dic[0] + "_start"
-                    temp[j][maxlength-1] = dic[0] + "_end"
+                    temp[maxlength-1][0] = dic[0] + "_end"
                     for l in range(1,maxlength-1):
-                        temp[j][l] = dic[0] + "_cont"
+                        temp[j+l][0] = dic[0] + "_cont"
                 elif(init == temp[j][1] and init == 1):
                     temp[j][0] = dic[0]
                 else:
