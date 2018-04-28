@@ -27,11 +27,20 @@ dic_list = [["common"],["loc_name"],["loc_clue"],["org_name"],["org_clue"],["per
 
 def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
+    temp = []
     for path in tmp:
         i = re.split(r'\/', path)
         name = i[len(i)-1].replace(".txt", "")
         print(name)
-
+        temp.append(name)
+        txt_file = open(path,"r",encoding="utf-8-sig")
+        text = txt_file.read()
+        txt_file.close()
+        raw = re.split(r'\n', text)
+        for comp in raw:
+            temp.append(comp)
+        dic_list.append(temp)
+    print(dic_list)
         """
         txt_file = open(i,"r",encoding="utf-8-sig")
         text += txt_file.read()
