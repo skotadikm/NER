@@ -29,7 +29,7 @@ def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
     for i in tmp:
         i = re.split(r'\/', corpus_text)
-        print(i[len[i]])
+        print(i)
 
         """
         txt_file = open(i,"r",encoding="utf-8-sig")
