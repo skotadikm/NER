@@ -208,27 +208,31 @@ def dic_check(dic,index):
 def dic_summary(temp, maxlength, dic):
     #temp = [[label,maxlength,1,2,3,4,...,maxlength]]
     for i in range(maxlength):
+        index = maxlength - i
         for j in range(vocab_count):
-            if(temp[j][1] == maxlength):
+            if(temp[j][1] == index):
                 init = 0
-                for k in range(maxlength):
+                for k in range(index):
                     if(temp[j+k][0] == "False"):
                         init += 1
                 if(init == temp[j][1] and init > 1):
                     temp[j][0] = dic[0] + "_start"
-                    temp[maxlength-1][0] = dic[0] + "_end"
-                    for l in range(1,maxlength-1):
+                    temp[index-1][0] = dic[0] + "_end"
+                    for l in range(1,index-1):
                         temp[j+l][0] = dic[0] + "_cont"
                 elif(init == temp[j][1] and init == 1):
                     temp[j][0] = dic[0]
                 else:
-                    for l in range(maxlength):
-                        if(init < temp[j][1]):
-                            if(temp[j][init+1]):
-                                temp[j][1] = init
-                                break
-                            else:
-                                temp[j][1] = 0
+                    for l in range(init):
+                        if(temp[j][init+1]):
+                            temp[j][1] = init
+                            break
+                            
+                        init -= 1
+                        temp[j].pop()
+                        if(len(temp[j]) == 2):
+                            temp[j][1] = 0
+
     return temp
 
 def dic_check_11words():
