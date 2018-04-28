@@ -29,7 +29,7 @@ def create_dic_list(dicname):
     tmp = glob.glob("/home/tin/scripts/extract_feature/NER/dic/"+'*')
     for path in tmp:
         i = re.split(r'\/', path)
-        name = i[len(i)-1]
+        name = i[len(i)-1].replace(".txt", "")
         print(name)
 
         """
