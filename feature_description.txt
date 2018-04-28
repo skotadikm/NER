@@ -33,11 +33,11 @@ ________|_______________________________________________________________________
 17    	|	blank_end = true , false
 18	|	common dict
 19	|	loc_name dict
-20	|	loc_clue dict
-21	|	org_name dict
-22	|	org_clue dict
-23	|	per_clue dict
-24	|	per_first dict
+20	|	per_first dict
+21	|	org_clue dict
+22	|	org_name dict
+23	|	loc_clue dict
+24	|	per_clue dict
 25	|	per_last dict
 26	|	country
 27-n	|	เพิ่มอีก n dic
