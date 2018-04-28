@@ -32,14 +32,14 @@ ________|_______________________________________________________________________
 16    	|	blank_front = true , false
 17    	|	blank_end = true , false
 18	|	common dict
-19	|	loc_name dict
-20	|	per_first dict
-21	|	org_clue dict
-22	|	org_name dict
-23	|	loc_clue dict
+19	|	country dict
+20	|	loc_clue dict
+21	|	loc_name dict
+22	|	org_clue dict
+23	|	org_name dict
 24	|	per_clue dict
-25	|	per_last dict
-26	|	country dict
+25	|	per_first dict
+26	|	per_last dict
 27-n	|	เพิ่มอีก n dic
 n+1    	|	class_output = per , per_start , per_cont , per_end , org , org_start , org_cont , org_end , loc , loc_start , loc_cont , loc_end 
 ________|_______________________________________________________________________________________________________________________________________
