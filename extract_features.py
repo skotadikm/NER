@@ -625,12 +625,15 @@ if __name__ == '__main__':
     """
     # god tum ja
     f = open("output.txt","w+")
+    c = 0
     for List in vocab:
         i = 0
+        c += 1
         for word in List:
             i += 1
             f.write(str(word))
             if(i < len(List)):
                 f.write("\t")
-        f.write("\n")
+        if(c < vocab_count):
+            f.write("\n")
     f.close() 
