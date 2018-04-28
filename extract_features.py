@@ -31,7 +31,6 @@ def create_dic_list(dicname):
     for path in tmp:
         i = re.split(r'\/', path)
         name = i[len(i)-1].replace(".txt", "")
-        print(name)
         temp.append(name)
         txt_file = open(path,"r",encoding="utf-8-sig")
         text = txt_file.read()
@@ -41,7 +40,8 @@ def create_dic_list(dicname):
             temp.append(comp)
         dic_list.append(temp)
         temp = []
-    print(dic_list[4][0])
+    for i in range(len(dic_list)):
+        print(dic_list[i][0])
 
 
 def create_dic(i):
