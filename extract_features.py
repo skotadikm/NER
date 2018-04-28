@@ -40,6 +40,7 @@ def create_dic_list(dicname):
         for comp in raw:
             temp.append(comp)
         dic_list.append(temp)
+        temp = []
     print(dic_list[4][0])
 
 
