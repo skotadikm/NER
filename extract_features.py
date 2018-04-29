@@ -106,8 +106,14 @@ def create_vocab(corpus_text):
                     else:
                         word =  comp.replace(tag[0], "")
                 label = tag[0]
-                if(label not in alltag):
-                    alltag.append(label)
+                if(len(alltag) == 0):
+                    alltag.append([label,1])
+                else:
+                    for i in range(len(alltag)):
+                        if(label == alltag[i][0]):
+                            alltag[i][1] += 1
+                        else:
+                            alltag.append([label,1])
                 tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
                 tmp.append(alphanum(word))
                 tmp.append(Num(word))
