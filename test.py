@@ -50,11 +50,9 @@ def create_confusion_matrix(test):
         for i in range(len(confusion_matrix)):
             if(line[0] == confusion_matrix[i][0]):
                 pointer = i
-                break
         for i in range(len(confusion_matrix)):
             if(line[1] == confusion_matrix[i][0]):
                 confusion_matrix[pointer][i+1] += 1
-                break
     
 
     for i in range(len(confusion_matrix)):
