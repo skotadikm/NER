@@ -45,7 +45,7 @@ def create_dic_list(dicname):
     txt_file = open(dicname,"r",encoding="utf-8-sig")
     text = txt_file.read()
     txt_file.close()
-    tmp = re.split(r'/n', text)
+    tmp = re.split(r'\/n', text)
     for path in tmp:
         i = re.split(r'\/', path)
         name = i[len(i)-1].replace(".txt", "")
