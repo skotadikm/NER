@@ -28,4 +28,5 @@ def create_confusion_matrix(test):
 
 if __name__ == '__main__':
     test = crf_test(model, test_data)
-    print(create_confusion_matrix(test))
+    tmp = create_confusion_matrix(test)
+    print(tmp)
