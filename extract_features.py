@@ -46,6 +46,8 @@ def create_dic_list(dicname):
     text = txt_file.read()
     txt_file.close()
     tmp = re.split(r'\/n', text)
+    print(tmp)
+    """
     for path in tmp:
         i = re.split(r'\/', path)
         name = i[len(i)-1].replace(".txt", "")
@@ -58,6 +60,7 @@ def create_dic_list(dicname):
             temp.append(comp)
         dic_list.append(temp)
         temp = []
+    """
     for i in range(len(dic_list)):
         print(dic_list[i][0])
 
