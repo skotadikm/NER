@@ -665,7 +665,7 @@ if __name__ == '__main__':
     output = outputfilepath(corpus)
     print(output)
     # god tum ja
-    f = open(output+"output.txt","w+")
+    f = open(output+"feature.txt","w+")
     c = 0
     for List in vocab:
         if(len(List) == len(vocab[0])):
