@@ -9,6 +9,7 @@ import sys
 
 model = sys.argv[1]
 test_data = sys.argv[2]
+counter = 0
 
 def crf_test():
     cmd = os.popen(r'crf_test -m ' + model + ' ' + test_data)
@@ -24,6 +25,8 @@ def create_confusion_matrix(test):
         pointer = len(i)
         tmp2.append(i[pointer-2])
         tmp2.append(i[pointer-1])
+        if(i[pointer-2] != i[pointer-1]):
+            counter += 1
         tag.append(tmp2)
     return tag
 
@@ -32,3 +35,4 @@ if __name__ == '__main__':
     test = crf_test()
     tmp = create_confusion_matrix(test)
     print(tmp)
+    print(counter)
