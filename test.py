@@ -32,7 +32,7 @@ def create_confusion_matrix(test):
                 confusion_matrix.append([raw[pointer-2]])
     for i in range(len(confusion_matrix)):
         for j in range(len(confusion_matrix)):
-            confusion_matrix[i][j].append(0)
+            confusion_matrix[i].append(0)
 
         
 
