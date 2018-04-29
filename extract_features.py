@@ -22,8 +22,6 @@ corpus_text = ""
 front_space = 0
 vocab_count = 0
 alltag = []
-
-#original dictionary
 dic_list = []
 
 def create_dic_list(dicname):
@@ -272,6 +270,13 @@ def dic_summary(temp, maxlength, dic):
                             temp[j][1] = 0
 
     return temp
+
+def outputfilepath(corpus):
+    tmp = re.split(r'\/', corpus)
+    path = "/"
+    for i in range(len(tmp)-1):
+        path += tmp[i] + "/"
+    return path
 
 def dic_check_11words():
     temp = ["ool","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
@@ -657,8 +662,10 @@ if __name__ == '__main__':
         print(i)
     print("Total is " + str(len(vocab)) + " word")
     print(alltag)
+    output = outputfilepath(corpus)
+    print(output)
     # god tum ja
-    f = open("output.txt","w+")
+    f = open(output+"output.txt","w+")
     c = 0
     for List in vocab:
         if(len(List) == len(vocab[0])):
