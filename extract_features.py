@@ -652,16 +652,13 @@ if __name__ == '__main__':
     create_dic_list(dicname)
     create_vocab(corpus_text)
     vocab_check()
-    """
     for i in range(len(dic_list)):
         dic_check(dic_list[i],i)
-    """
 
-    """
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
-    """
+
     # god tum ja
     f = open("output.txt","w+")
     c = 0
