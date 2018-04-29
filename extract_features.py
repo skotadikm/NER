@@ -46,22 +46,19 @@ def create_dic_list(dicname):
     text = txt_file.read()
     txt_file.close()
     tmp = text.splitlines()
-    if(tmp != ['']):
-        print(tmp)
-    """
-    for path in tmp:
-        i = re.split(r'\/', path)
-        name = i[len(i)-1].replace(".txt", "")
-        temp.append(name)
-        txt_file = open(path,"r",encoding="utf-8-sig")
-        text = txt_file.read()
-        txt_file.close()
-        raw = re.split(r'\n', text)
-        for comp in raw:
-            temp.append(comp)
-        dic_list.append(temp)
-        temp = []
-    """
+    if(tmp != []):
+        for path in tmp:
+            i = re.split(r'\/', path)
+            name = i[len(i)-1].replace(".txt", "")
+            temp.append(name)
+            txt_file = open(path,"r",encoding="utf-8-sig")
+            text = txt_file.read()
+            txt_file.close()
+            raw = re.split(r'\n', text)
+            for comp in raw:
+                temp.append(comp)
+           dic_list.append(temp)
+           temp = []
     for i in range(len(dic_list)):
         print(dic_list[i][0])
 
