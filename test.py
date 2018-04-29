@@ -34,7 +34,7 @@ def create_confusion_matrix(test):
                 confusion_matrix.append([raw[pointer-2]])
     for i in range(len(confusion_matrix)):
         for j in range(len(confusion_matrix)):
-            confusion_matrix[i].append(0)
+            confusion_matrix[i].append(int(0))
     for line in tmp2:
         pointer = 0
         for i in range(len(confusion_matrix)):
@@ -43,7 +43,7 @@ def create_confusion_matrix(test):
                 break
         for i in range(len(confusion_matrix)):
             if(line[1] == confusion_matrix[i][0]):
-                confusion_matrix[pointer][i] += 1
+                confusion_matrix[pointer][i+1] += 1
                 break
 
 
