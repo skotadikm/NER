@@ -50,7 +50,7 @@ def create_confusion_matrix(test):
                 confusion_matrix[pointer][i+1] += 1
                 break
     for i in range(len(confusion_matrix)):
-        for j in range(len(1,confusion_matrix)):
+        for j in range(1,len(confusion_matrix)):
             counter2 += confusion_matrix[i][j]
     print(counter)
     print(counter2)
