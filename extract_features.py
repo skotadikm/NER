@@ -16,7 +16,7 @@ import sys
 import glob
 
 corpus = sys.argv[1]
-dicname = sys.argv[1]
+dicname = sys.argv[2]
 vocab = []
 corpus_text = ""
 front_space = 0
@@ -41,6 +41,25 @@ def create_dic_list(dicname):
             temp.append(comp)
         dic_list.append(temp)
         temp = []
+    tmp = []
+    txt_file = open(dicname,"r",encoding="utf-8-sig")
+    text = txt_file.read()
+    txt_file.close()
+    tmp = re.split(r'/n', text)
+    for path in tmp:
+        i = re.split(r'\/', path)
+        name = i[len(i)-1].replace(".txt", "")
+        temp.append(name)
+        txt_file = open(path,"r",encoding="utf-8-sig")
+        text = txt_file.read()
+        txt_file.close()
+        raw = re.split(r'\n', text)
+        for comp in raw:
+            temp.append(comp)
+        dic_list.append(temp)
+        temp = []
+    for i in range(len(dic_list)):
+        print(dic_list[i][0])
 
 def create_dic(i):
     #แก้ไขpath dic
