@@ -85,11 +85,8 @@ def create_vocab(corpus_text):
     global vocab_count
     global vocab
     raw = re.split(r'\|', corpus_text)
-    init = 0
     for comp in raw:
-        if(init == 0):
-            init = 1
-        else:
+        if(comp != ''):
             tmp = []
             space_tag = re.findall(r"\s",comp)
             if(comp != " " and comp != "\n" and space_tag == []):
