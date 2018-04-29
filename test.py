@@ -54,6 +54,7 @@ def create_confusion_matrix(test):
             counter2 += confusion_matrix[i][j]
     print(counter)
     print(counter2)
+    print(len(tmp2))
         
 
 
