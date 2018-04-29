@@ -19,7 +19,7 @@ def crf_test():
 def create_confusion_matrix(test):
     tmp1 = test.splitlines()
     for line in tmp1[:len(tmp1)-1]:
-                raw = re.split(r'\t', line)
+        raw = re.split(r'\t', line)
         pointer = len(raw)
         if(len(confusion_matrix) == 0):
             confusion_matrix.append([raw[pointer-2]])
