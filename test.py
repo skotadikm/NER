@@ -16,10 +16,9 @@ def crf_test():
     return result
 
 def create_confusion_matrix(test):
-    counter = 0
     tmp1 = test.splitlines()
     tag = []
-    for line in tmp1:
+    for line in tmp1(,len(tmp1)-1):
         tmp2 = []
         i = re.split(r'\t', line)
         pointer = len(i)
@@ -28,7 +27,7 @@ def create_confusion_matrix(test):
         if(i[pointer-2] != i[pointer-1]):
             counter += 1
         tag.append(tmp2)
-    return counter
+    return tag
 
 
 if __name__ == '__main__':
