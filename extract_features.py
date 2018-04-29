@@ -661,7 +661,7 @@ if __name__ == '__main__':
     f = open("output.txt","w+")
     c = 0
     for List in vocab:
-        if(len(List) == len(vocab[0]):
+        if(len(List) == len(vocab[0])):
             i = 0
             c += 1
             for word in List:
