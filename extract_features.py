@@ -673,7 +673,11 @@ if __name__ == '__main__':
     print(alltag)
     output = outputfilepath(corpus)
     print(output)
-    # god tum ja
+    t = open(output+"corpus_info.txt","w+")
+    t.write(str(vocab_count)+"\n")
+    for tag in alltag:
+        t.write(str(tag[0])+" "+str(tag[1])+"\n")
+    t.close()
     f = open(output+"feature.txt","w+")
     c = 0
     for List in vocab:
