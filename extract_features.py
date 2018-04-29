@@ -273,8 +273,8 @@ def dic_summary(temp, maxlength, dic):
 
 def outputfilepath(corpus):
     tmp = re.split(r'\/', corpus)
-    path = "/"
-    for i in range(len(tmp)-1):
+    path = ""
+    for i in range(len(tmp)-2):
         path += tmp[i] + "/"
     return path
 
