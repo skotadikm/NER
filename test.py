@@ -17,6 +17,7 @@ def crf_test(model, test_data):
 
 def create_confusion_matrix(test):
     tmp1 = test.splitlines()
+    print(tmp1)
     for line in tmp1:
         tmp2 = []
         i = re.split(r'\t', line)
