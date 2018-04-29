@@ -17,11 +17,15 @@ def crf_test():
     return result
 
 def create_confusion_matrix(test):
+    counter = 0
+    counter2 = 0
     tmp1 = test.splitlines()
     tmp2 = []
     for line in tmp1[:len(tmp1)-1]:
         raw = re.split(r'\t', line)
         pointer = len(raw)
+        if(raw[pointer-2] != raw[pointer-1]):
+            counter += 1
         tmp2.append([raw[pointer-2],raw[pointer-1]])
         if(len(confusion_matrix) == 0):
             confusion_matrix.append([raw[pointer-2]])
@@ -45,8 +49,11 @@ def create_confusion_matrix(test):
             if(line[1] == confusion_matrix[i][0]):
                 confusion_matrix[pointer][i+1] += 1
                 break
-
-
+    for i in range(len(confusion_matrix)):
+        for j in range(len(1,confusion_matrix)):
+            counter2 += confusion_matrix[i][j]
+    print(counter)
+    print(counter2)
         
 
 
