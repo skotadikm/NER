@@ -21,6 +21,7 @@ vocab = []
 corpus_text = ""
 front_space = 0
 vocab_count = 0
+alltag = []
 
 #original dictionary
 dic_list = []
@@ -107,6 +108,8 @@ def create_vocab(corpus_text):
                     else:
                         word =  comp.replace(tag[0], "")
                 label = tag[0]
+                if(label not in alltag):
+                    alltag.append(label)
                 tmp = [word,0,"wait","ool","ool","ool","ool","ool","ool","ool","ool","ool","ool"]
                 tmp.append(alphanum(word))
                 tmp.append(Num(word))
@@ -653,7 +656,7 @@ if __name__ == '__main__':
     for i in vocab:
         print(i)
     print("Total is " + str(len(vocab)) + " word")
-
+    print(alltag)
     # god tum ja
     f = open("output.txt","w+")
     c = 0
