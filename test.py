@@ -22,8 +22,8 @@ def create_confusion_matrix(test):
         tmp2 = []
         i = re.split(r'\t', line)
         pointer = len(i)
+        tmp2.append(i[pointer-2])
         tmp2.append(i[pointer-1])
-        tmp2.append(i[pointer])
         tag.append(tmp2)
     return tag
 
