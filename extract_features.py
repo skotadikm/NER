@@ -46,7 +46,7 @@ def create_dic_list(dicname):
     text = txt_file.read()
     txt_file.close()
     tmp = re.split(r'\/n', text)
-    if(temp != ['']):
+    if(tmp != ['']):
         print(tmp)
     """
     for path in tmp:
