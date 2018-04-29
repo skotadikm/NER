@@ -20,7 +20,7 @@ def create_confusion_matrix(test):
     for line in tmp1:
         tmp2 = []
         i = re.split(r'\t', line)
-        pointer = len[i]
+        pointer = len(i)
         tmp2.append(pointer-1)
         tmp2.append(pointer)
     return tmp2
