@@ -52,7 +52,10 @@ def recall():
         TotalGoldLabel = 0
         for j in range(len(confusion_matrix)):
             TotalGoldLabel += confusion_matrix[j][i+1]
-        tmp.append(TotalGoldLabel)
+        if(TotalGoldLabel != 0):
+            tmp.append(confusion_matrix[i][i+1] / TotalGoldLabel)
+        else:
+            tmp.append(0)
     return tmp
 
 def precision():
@@ -61,7 +64,10 @@ def precision():
         TotalPredicted = 0
         for j in range(len(confusion_matrix)):
             TotalPredicted += confusion_matrix[i][j+1]
-        tmp.append(TotalPredicted)
+        if(TotalPredicted != 0):
+            tmp.append(confusion_matrix[i][i+1] / TotalPredicted)
+        else:
+            tmp.append(0)
     return tmp
 
 def rec_and_prec():
@@ -79,5 +85,3 @@ if __name__ == '__main__':
     print(measure)
     for line in confusion_matrix:
         print(line)
-
-#confusion_matrix[i][i+1] / 
