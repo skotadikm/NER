@@ -77,6 +77,7 @@ if __name__ == '__main__':
     create_confusion_matrix(test)
     measure = rec_and_prec()
     print(measure)
-    print(confusion_matrix)
+    for line in confusion_matrix:
+        print(line)
 
 #confusion_matrix[i][i+1] / 
