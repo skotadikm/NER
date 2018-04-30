@@ -6,17 +6,86 @@ F1 Score = 2*(Recall * Precision) / (Recall + Precision)
 import os
 import re
 import sys
+import numpy as np
 
 model = sys.argv[1]
 test_data = sys.argv[2]
 confusion_matrix = []
+label = []
 
 def crf_test():
     cmd = os.popen(r'crf_test -m ' + model + ' ' + test_data)
     result = cmd.read()
     return result
 
+def creat_final_result(test):
+    tmp1 = test.splitlines()
+    tmp2 = []
+    final = []
+    for line in tmp1[:len(tmp1)-1]:
+        raw = re.split(r'\t', line)
+        pointer = len(raw)
+        tmp2.append([raw[pointer-2],raw[pointer-1]])
+        tag = raw[pointer-2].replace("_start", "")
+        tag = tag.replace("_cont", "")
+        tag = tag.replace("_end", "")
+        if(tag not in label):
+            label.append(tag)
+    ans_class = []
+    for i in range(len(tag)):
+        ans_class.append(0)
+    lable_pointer = 0
+    ans_pointer = 0
+    ans = ans_class
+    for i in range(len(tmp2)):
+        if("start" in tmp2[i][0] or "cont" in tmp2[i][0]):
+            lable_pointer += 1
+            if(tmp2[i][0] == tmp2[i][1]):
+                ans_pointer +=1
+        elif("end" in tmp2[i][0]):
+            if(tmp2[i][0] == tmp2[i][1] and label_pointer == ans_pointer):
+                final.append([tmp2[i][0].replace("_end", ""),tmp2[i][0].replace("_end", "")])
+            else:
+                for j in range(label_pointer):
+                    for index, tag in enumerate(label):
+                        if(tag in tmp2[i-j]):
+                            ans[index] += 1
+                ind = np.argmax(ans)
+                final.append([tmp2[i][0].replace("_end", ""),label[ind]])
+        else:
+            if("start" in tmp2[i][1] or "cont" in tmp2[i][1] or "end" in tmp2[i][1]):
+                tag = tmp2[i][1].replace("_start", "")
+                tag = tag.replace("_cont", "")
+                tag = tag.replace("_end", "")
+                if(tag == tmp2[i][0]):
+                    final.append([tmp2[i][0],"(other)"])
+                else:
+                    final.append([tmp2[i][0],tag])
+            else:
+                final.append([tmp2[i][0],tmp2[i][1]])
+        lable_pointer = 0
+        ans_pointer = 0
+        ans = ans_class
+    return final
+
 def create_confusion_matrix(test):
+    temp = creat_final_result(test)
+    for tag in label:
+        confusion_matrix.append([tag])
+    for i in range(len(confusion_matrix)):
+        for j in range(len(confusion_matrix)):
+            confusion_matrix[i].append(0)
+    for line in temp:
+        pointer = 0
+        for i in range(len(confusion_matrix)):
+            if(line[0] == confusion_matrix[i][0]):
+                pointer = i
+                break
+        for i in range(len(confusion_matrix)):
+            if(line[1] == confusion_matrix[i][0]):
+                confusion_matrix[pointer][i+1] += 1
+                break  
+    """
     tmp1 = test.splitlines()
     tmp2 = []
     for line in tmp1[:len(tmp1)-1]:
@@ -45,6 +114,7 @@ def create_confusion_matrix(test):
             if(line[1] == confusion_matrix[i][0]):
                 confusion_matrix[pointer][i+1] += 1
                 break
+    """
 
 def recall():
     tmp = []
