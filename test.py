@@ -1,6 +1,6 @@
 """
-Recall = TP/TP+FN
-Precision = TP/TP+FP
+Recall = TP/TP+FN = TP/TotalGoldLabel
+Precision = TP/TP+FP = TP/TotalPredicted
 F1 Score = 2*(Recall * Precision) / (Recall + Precision)
 """
 import os
@@ -46,8 +46,32 @@ def create_confusion_matrix(test):
                 confusion_matrix[pointer][i+1] += 1
                 break
 
+def recall():
+    for i in range(len(confusion_matrix)):
+        TotalGoldLabel = 0
+        for j in range(len(confusion_matrix)):
+            TotalGoldLabel += confusion_matrix[j][i+1]
+        tmp.append(confusion_matrix[i][i+1] / TotalGoldLabel)
+    return tmp
+
+def precision():
+    for i in range(len(confusion_matrix)):
+        TotalPredicted = 0
+        for j in range(len(confusion_matrix)):
+            TotalPredicted += confusion_matrix[i][j+1]
+        tmp.append(confusion_matrix[i][i+1] / TotalPredicted)
+    return tmp
+
+def rec_and_prec():
+    temp = []
+    recall = recall()
+    precision = precision()
+    for i in range(len(confusion_matrix)):
+        temp.append([confusion_matrix[i][0],recall[i],precision[i]])
+    return temp
+
 if __name__ == '__main__':
     test = crf_test()
     create_confusion_matrix(test)
-
-
+    measure = rec_and_prec()
+    print(measure)
