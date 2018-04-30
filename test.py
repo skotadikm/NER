@@ -64,10 +64,10 @@ def precision():
 
 def rec_and_prec():
     temp = []
-    recall = recall()
-    precision = precision()
+    rec = recall()
+    prec = precision()
     for i in range(len(confusion_matrix)):
-        temp.append([confusion_matrix[i][0],recall[i],precision[i]])
+        temp.append([confusion_matrix[i][0],rec[i],prec[i]])
     return temp
 
 if __name__ == '__main__':
