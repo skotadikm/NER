@@ -138,6 +138,8 @@ if __name__ == '__main__':
     for line in score:
         print(line[0]+"\t")
         for word in line[1:length-1]:
-            print(round(word, 3) + "\t")
-        print(round(line[length-1], 3))
+            tmp = round(word, 3)
+            print(tmp + "\t")
+        tmp = round(line[length-1]
+        print(tmp)
         print("\n")    
