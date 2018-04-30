@@ -59,7 +59,7 @@ def create_confusion_matrix(test):
 
     for i in range(len(confusion_matrix)):
         for j in range(1,len(confusion_matrix)):
-            if(i != j+1):
+            if(i+1 != j):
                 counter2 += confusion_matrix[i][j]
     print(counter)
     print(counter2)
