@@ -126,7 +126,7 @@ def measure():
     prec = precision()
     f = F_measure(rec, prec)
     for i in range(len(confusion_matrix)):
-        temp.append([confusion_matrix[i][0],rec[i],prec[i]],f[i])
+        temp.append([confusion_matrix[i][0],rec[i],prec[i],f[i]])
     return temp
 
 if __name__ == '__main__':
