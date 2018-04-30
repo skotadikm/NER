@@ -134,5 +134,11 @@ if __name__ == '__main__':
     create_confusion_matrix(test)
     score = measure()
     print("class"+"\t"+"Recall"+"\t"+"Precision"+"\t"+"F1-measure")
+    length = len(score[0])
     for line in score:
-        print(line)
+        print(line[0]+"\t")
+        for word in line[1:length-1]:
+            print("%.3f" % word)
+            print("\t")
+        print("%.3f" % line[length-1])
+        print("\n")    
