@@ -85,36 +85,6 @@ def create_confusion_matrix(test):
             if(line[1] == confusion_matrix[i][0]):
                 confusion_matrix[pointer][i+1] += 1
                 break  
-    """
-    tmp1 = test.splitlines()
-    tmp2 = []
-    for line in tmp1[:len(tmp1)-1]:
-        raw = re.split(r'\t', line)
-        pointer = len(raw)
-        tmp2.append([raw[pointer-2],raw[pointer-1]])
-        if(len(confusion_matrix) == 0):
-            confusion_matrix.append([raw[pointer-2]])
-        else:
-            count = 0
-            for i in range(len(confusion_matrix)):
-                if(raw[pointer-2] == confusion_matrix[i][0]):
-                    count += 1
-            if(count == 0):
-                confusion_matrix.append([raw[pointer-2]])
-    for i in range(len(confusion_matrix)):
-        for j in range(len(confusion_matrix)):
-            confusion_matrix[i].append(0)
-    for line in tmp2:
-        pointer = 0
-        for i in range(len(confusion_matrix)):
-            if(line[0] == confusion_matrix[i][0]):
-                pointer = i
-                break
-        for i in range(len(confusion_matrix)):
-            if(line[1] == confusion_matrix[i][0]):
-                confusion_matrix[pointer][i+1] += 1
-                break
-    """
 
 def recall():
     tmp = []
@@ -140,17 +110,28 @@ def precision():
             tmp.append(0)
     return tmp
 
-def rec_and_prec():
+def F_measure(rec, prec):
+    tmp = []
+    for i in range(len(confusion_matrix)):
+        if(rec[i] + prec[i] != 0):
+            f = 2 * (rec[i] * prec[i]) / (rec[i] + prec[i])
+            tmp.append(f)
+        else:
+            tmp.append(0)
+    return tmp
+
+def measure():
     temp = []
     rec = recall()
     prec = precision()
+    f = F_measure(rec, prec)
     for i in range(len(confusion_matrix)):
-        temp.append([confusion_matrix[i][0],rec[i],prec[i]])
+        temp.append([confusion_matrix[i][0],rec[i],prec[i]],f[i])
     return temp
 
 if __name__ == '__main__':
     test = crf_test()
     create_confusion_matrix(test)
-    measure = rec_and_prec()
-    for line in measure:
+    score = measure()
+    for line in score:
         print(line)
