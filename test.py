@@ -82,6 +82,5 @@ if __name__ == '__main__':
     test = crf_test()
     create_confusion_matrix(test)
     measure = rec_and_prec()
-    print(measure)
-    for line in confusion_matrix:
+    for line in measure:
         print(line)
