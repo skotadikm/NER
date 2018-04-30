@@ -1,4 +1,7 @@
 """
+How to use : python test.py model_file datatest_file
+or : python test.py modelfile datatestfile > record_file_name
+
 Recall = TP/TP+FN = TP/TotalGoldLabel
 Precision = TP/TP+FP = TP/TotalPredicted
 F1 Score = 2*(Recall * Precision) / (Recall + Precision)
