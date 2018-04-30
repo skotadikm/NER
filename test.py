@@ -140,8 +140,8 @@ if __name__ == '__main__':
         string += line[0] + "\t"
         for word in line[1:length-1]:
             tmp = round(word, 3)
-            string += str(tmp) + "\t" +"\t"
+            string += str(tmp) + "\t" 
         tmp = round(line[length-1], 3)
-        string += str(tmp) 
+        string += "\t" + str(tmp) 
         print(string)
         string = ""    
