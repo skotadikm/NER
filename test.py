@@ -133,5 +133,6 @@ if __name__ == '__main__':
     test = crf_test()
     create_confusion_matrix(test)
     score = measure()
+    print("class"+"\t"+"Recall"+"\t"+"Precision"+"\t"+"F1-measure")
     for line in score:
         print(line)
