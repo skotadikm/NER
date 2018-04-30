@@ -135,12 +135,13 @@ if __name__ == '__main__':
     score = measure()
     print("class"+"\t"+"Recall"+"\t"+"Precision"+"\t"+"F1-measure")
     length = len(score[0])
+    string = ""
     for line in score:
-        print(line[0]+"\t")
+        string += line[0] + "\t"
         for word in line[1:length-1]:
             tmp = round(word, 3)
-            print(tmp)
-            print("\t")
+            string += str(tmp) + "\t"
         tmp = round(line[length-1])
         print(tmp)
-        print("\n")    
+        print(string)
+        string = ""    
