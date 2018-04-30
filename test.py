@@ -138,7 +138,6 @@ if __name__ == '__main__':
     for line in score:
         print(line[0]+"\t")
         for word in line[1:length-1]:
-            print("%.3f" % word)
-            print("\t")
+            print("%.3f" % word + "\t")
         print("%.3f" % line[length-1])
         print("\n")    
