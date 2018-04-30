@@ -47,6 +47,7 @@ def create_confusion_matrix(test):
                 break
 
 def recall():
+    tmp = []
     for i in range(len(confusion_matrix)):
         TotalGoldLabel = 0
         for j in range(len(confusion_matrix)):
@@ -55,6 +56,7 @@ def recall():
     return tmp
 
 def precision():
+    tmp = []
     for i in range(len(confusion_matrix)):
         TotalPredicted = 0
         for j in range(len(confusion_matrix)):
