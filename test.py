@@ -139,7 +139,8 @@ if __name__ == '__main__':
         print(line[0]+"\t")
         for word in line[1:length-1]:
             tmp = round(word, 3)
-            print(tmp + "\t")
+            print(tmp)
+            print("\t")
         tmp = round(line[length-1])
         print(tmp)
         print("\n")    
