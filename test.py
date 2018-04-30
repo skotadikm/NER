@@ -34,12 +34,12 @@ def creat_final_result(test):
     ans_class = []
     for i in range(len(tag)):
         ans_class.append(0)
-    lable_pointer = 0
+    label_pointer = 0
     ans_pointer = 0
     ans = ans_class
     for i in range(len(tmp2)):
         if("start" in tmp2[i][0] or "cont" in tmp2[i][0]):
-            lable_pointer += 1
+            label_pointer += 1
             if(tmp2[i][0] == tmp2[i][1]):
                 ans_pointer +=1
         elif("end" in tmp2[i][0]):
@@ -63,7 +63,7 @@ def creat_final_result(test):
                     final.append([tmp2[i][0],tag])
             else:
                 final.append([tmp2[i][0],tmp2[i][1]])
-        lable_pointer = 0
+        label_pointer = 0
         ans_pointer = 0
         ans = ans_class
     return final
